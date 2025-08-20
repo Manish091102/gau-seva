@@ -4,6 +4,8 @@ import Header from "@/components/header"
 import HeroBanner from "@/components/hero-banner"
 import QuickLinksSection from "@/components/quick-links-section"
 import HighlightsSection from "@/components/highlights-section"
+import AboutEventSection from "@/components/about-event-section"
+import VolunteerSection from "@/components/volunteer-section"
 import Footer from "@/components/footer"
 import { useAuth } from "@/contexts/auth-context"
 
@@ -18,6 +20,8 @@ export default function HomePage() {
       <main>
         <QuickLinksSection />
         <HighlightsSection />
+        <AboutEventSection />
+        <VolunteerSection />
       </main>
       <Footer />
     </div>

@@ -7,6 +7,8 @@ import { useAuth } from "@/contexts/auth-context"
 import CardGenerator from "@/components/card-generator"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import Image from "next/image"
+import logo from "./assets/image.png"
 
 export default function HeroBanner() {
   const { isAuthenticated, user } = useAuth()
@@ -42,12 +44,16 @@ export default function HeroBanner() {
       <div className="flex-1 flex items-center justify-center">
         <div className="text-center text-white z-10 max-w-4xl mx-auto px-4">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 text-white drop-shadow-2xl">Gauseva</h1>
-          <p className="text-2xl md:text-3xl mb-12 font-medium text-white drop-shadow-lg">
+          <p className="text-2xl md:text-3xl mb-8 font-medium text-white drop-shadow-lg">
             Protecting Our Sacred Mother
+          </p>
+          <p className="text-lg md:text-xl mb-8 font-medium text-white drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
+            On 26th August at 2 PM, at Town Hall, Gandhinagar, the VLEE Charitable Trust welcomes you to
+            be part of the Gau Seva Abhiyan.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-            <Button
+            {/* <Button
               size="lg"
               className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 text-lg font-bold rounded-full min-w-[160px] shadow-xl transform hover:scale-105 transition-all"
               onClick={handleJoinMission}
@@ -60,17 +66,18 @@ export default function HeroBanner() {
               onClick={() => scrollToSection("about")}
             >
               ADOPT A COW
-            </Button>
+            </Button> */}
             <Button
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 text-lg font-bold rounded-full min-w-[160px] shadow-xl transform hover:scale-105 transition-all"
               onClick={() => scrollToSection("services")}
             >
-              VOLUNTEER
+              {/* VOLUNTEER */}
+              Become and Gau sevek
             </Button>
           </div>
 
-          {!isAuthenticated && (
+          {/* {!isAuthenticated && (
             <Dialog open={isAuthOpen} onOpenChange={setIsAuthOpen}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <DialogTrigger asChild>
@@ -96,7 +103,7 @@ export default function HeroBanner() {
                 <AuthModal onClose={() => setIsAuthOpen(false)} />
               </DialogContent>
             </Dialog>
-          )}
+          )} */}
 
           {isAuthenticated && (
             <Dialog open={isPreviewOpen} onOpenChange={setIsPreviewOpen}>
@@ -154,7 +161,15 @@ export default function HeroBanner() {
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex justify-between items-center">
-                {/* Left side navigation */}
+                {/* Left side - Logo */}
+                <div className="flex items-center">
+                  <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center overflow-hidden mr-3">
+                    <Image src={logo} alt="GauSeva" width={40} height={40} className="object-contain" />
+                  </div>
+                  {/* <span className="text-xl font-bold text-orange-600">GauSeva</span> */}
+                </div>
+                
+                {/* Center navigation */}
                 <div className="flex space-x-6">
                   <button className="text-gray-700 hover:text-orange-600 font-semibold transition-colors py-2 px-4 rounded-lg hover:bg-orange-50">
                     Home
@@ -165,10 +180,6 @@ export default function HeroBanner() {
                   <button className="text-gray-700 hover:text-orange-600 font-semibold transition-colors py-2 px-4 rounded-lg hover:bg-orange-50">
                     Our Cows
                   </button>
-                </div>
-
-                {/* Center navigation */}
-                <div className="flex space-x-6">
                   <button className="text-gray-700 hover:text-orange-600 font-semibold transition-colors py-2 px-4 rounded-lg hover:bg-orange-50">
                     Programs
                   </button>
@@ -178,13 +189,14 @@ export default function HeroBanner() {
                   <button className="text-gray-700 hover:text-orange-600 font-semibold transition-colors py-2 px-4 rounded-lg hover:bg-orange-50">
                     Blog
                   </button>
-                </div>
-
-                {/* Right side navigation with Login/Signup */}
-                <div className="flex space-x-4">
                   <button className="text-gray-700 hover:text-orange-600 font-semibold transition-colors py-2 px-4 rounded-lg hover:bg-orange-50">
                     Contact
                   </button>
+                </div>
+
+                {/* Right side - Logo and Auth */}
+                <div className="flex items-center space-x-4">
+                  
                   {!isAuthenticated && (
                     <Dialog open={isAuthOpen} onOpenChange={setIsAuthOpen}>
                       <DialogTrigger asChild>
