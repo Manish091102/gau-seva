@@ -3,7 +3,7 @@ import { jwtVerify } from "jose"
 import dbConnect from "@/lib/mongodb"
 import User from "@/models/User"
 
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET || "your-secret-key")
+const JWT_SECRET = new TextEncoder().encode("your-secret-key")
 
 async function verifyToken(request: NextRequest) {
   const authHeader = request.headers.get("authorization")

@@ -27,7 +27,7 @@ export default function AboutEventSection() {
             <div className="relative">
               <div className="absolute -left-4 top-0 w-2 h-full bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
               <p className="text-xl font-semibold pl-6">
-                On <span className="text-orange-600 font-black text-2xl">26th August, 2 PM</span> at <span className="bg-orange-100 px-3 py-1 rounded-full font-bold">Town Hall, Gandhinagar</span>, Willy Charitable Trust invites you to join a
+                On <span className="text-orange-600 font-black text-2xl">26th August, 2 PM</span> at <span className="bg-orange-100 px-3 py-1 rounded-full font-bold">Town Hall, Gandhinagar</span>, Vlee Charitable Trust invites you to join a
                 <span className="text-red-600 font-bold"> historic gathering</span> dedicated to Gau Seva — the selfless service of cows.
               </p>
             </div>

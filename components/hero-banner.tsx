@@ -73,7 +73,7 @@ export default function HeroBanner() {
               onClick={() => scrollToSection("services")}
             >
               {/* VOLUNTEER */}
-              Become and Gau sevek
+              Become a Gau sevek
             </Button>
           </div>
 

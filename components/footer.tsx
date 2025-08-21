@@ -79,7 +79,7 @@ export default function Footer() {
           <div className="flex items-center justify-center gap-3">
             <p className="text-gray-400">Made with</p>
             <Heart className="h-5 w-5 text-red-500 animate-pulse" />
-            <p className="text-gray-400">for GauSeva</p>
+            <p className="text-gray-400">for GauSeva by CI360degrees.com 2025</p>
           </div>
         </div>
       </div>

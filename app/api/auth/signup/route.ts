@@ -10,7 +10,7 @@ interface SignupRequest {
   photo?: string
 }
 
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET || "your-secret-key")
+const JWT_SECRET = new TextEncoder().encode("your-secret-key")
 
 export async function POST(request: NextRequest) {
   try {

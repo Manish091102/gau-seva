@@ -47,19 +47,63 @@ class MSG91Service {
 
 const msg91Service = new MSG91Service()
 
+// export async function POST(request: NextRequest) {
+//   try {
+//     const { mobile, otp } = await request.json()
+
+//     if (!mobile || !otp) {
+//       return NextResponse.json({ success: false, error: "Mobile number and OTP are required" }, { status: 400 })
+//     }
+
+//     const success = await msg91Service.verifyOTP(mobile, otp)
+
+//     return NextResponse.json({ success })
+//   } catch (error) {
+//     console.error("OTP verify error:", error)
+//     return NextResponse.json({ success: false, error: "Failed to verify OTP" }, { status: 500 })
+//   }
+// }
+
 export async function POST(request: NextRequest) {
   try {
+    console.log("hiii")
     const { mobile, otp } = await request.json()
 
     if (!mobile || !otp) {
-      return NextResponse.json({ success: false, error: "Mobile number and OTP are required" }, { status: 400 })
+      return NextResponse.json(
+        { success: false, error: "Mobile number and OTP are required" },
+        { status: 400 }
+      )
     }
 
-    const success = await msg91Service.verifyOTP(mobile, otp)
+    // ✅ Local test OTP verification
+    if (otp === "123456") {
+      return NextResponse.json({ success: true, message: "Test OTP verified locally" })
+    }
 
-    return NextResponse.json({ success })
+    // ❌ If you want to fully disable MSG91 in dev, just stop here:
+    // return NextResponse.json({ success: false, error: "Invalid OTP" })
+
+    // Otherwise fallback to MSG91
+    const response = await fetch("https://api.msg91.com/api/v5/otp/verify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authkey: process.env.MSG91_AUTH_KEY || "",
+      },
+      body: JSON.stringify({
+        mobile,
+        otp,
+      }),
+    })
+
+    const data = await response.json()
+    return NextResponse.json({ success: data.type === "success" })
   } catch (error) {
     console.error("OTP verify error:", error)
-    return NextResponse.json({ success: false, error: "Failed to verify OTP" }, { status: 500 })
+    return NextResponse.json(
+      { success: false, error: "Failed to verify OTP" },
+      { status: 500 }
+    )
   }
 }

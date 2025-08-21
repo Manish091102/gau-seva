@@ -31,7 +31,7 @@ interface MembershipCardData {
 // In-memory storage for demo purposes - replace with database in production
 const usersStorage = new Map<string, User>()
 
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET || "your-secret-key")
+const JWT_SECRET = new TextEncoder().encode( "your-secret-key")
 
 async function verifyToken(request: NextRequest) {
   const authHeader = request.headers.get("authorization")

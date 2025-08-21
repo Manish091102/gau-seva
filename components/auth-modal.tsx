@@ -99,9 +99,9 @@ export default function AuthModal({ onClose }: AuthModalProps) {
         newErrors.state = "State is required"
       }
 
-      if (!formData.photo) {
-        newErrors.photo = "Profile photo is required"
-      }
+      // if (!formData.photo) {
+      //   newErrors.photo = "Profile photo is required"
+      // }
     }
 
     if (!formData.mobile.trim()) {
@@ -242,24 +242,31 @@ export default function AuthModal({ onClose }: AuthModalProps) {
         )}
 
         {/* Toggle between Login and Signup */}
-        <div className="flex mb-6 bg-gray-100 rounded-lg p-1">
-          <Button
-            variant={isLogin ? "default" : "ghost"}
-            onClick={() => handleToggleMode(true)}
-            className="flex-1 bg-transparent data-[state=active]:bg-white data-[state=active]:shadow-sm"
-            disabled={isLoading}
-          >
-            Login
-          </Button>
-          <Button
-            variant={!isLogin ? "default" : "ghost"}
-            onClick={() => handleToggleMode(false)}
-            className="flex-1 bg-transparent data-[state=active]:bg-white data-[state=active]:shadow-sm"
-            disabled={isLoading}
-          >
-            Sign Up
-          </Button>
-        </div>
+        <div className="flex mb-6 bg-white rounded-lg p-1">
+            <Button
+              onClick={() => handleToggleMode(true)}
+              className={`flex-1 ${
+                isLogin
+                  ? "bg-orange-600 text-white shadow-sm"
+                  : "bg-white text-orange-600"
+              }`}
+              disabled={isLoading}
+            >
+              Login
+            </Button>
+            <Button
+              onClick={() => handleToggleMode(false)}
+              className={`flex-1 ${
+                !isLogin
+                  ? "bg-orange-600 text-white shadow-sm"
+                  : "bg-white text-orange-600"
+              }`}
+              disabled={isLoading}
+            >
+              Sign Up
+            </Button>
+          </div>
+
 
         {isLogin ? (
           /* Login Form */
@@ -430,12 +437,12 @@ export default function AuthModal({ onClose }: AuthModalProps) {
                       />
                     </label>
                   </div>
-                  {errors.photo && (
+                  {/* {errors.photo && (
                     <p className="text-sm text-red-600 mt-1 flex items-center gap-1">
                       <AlertCircle className="h-3 w-3" />
                       {errors.photo}
                     </p>
-                  )}
+                  )} */}
                 </div>
 
                 <Button
