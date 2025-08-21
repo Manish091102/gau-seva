@@ -70,40 +70,28 @@ export default function HeroBanner() {
             <Button
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 text-lg font-bold rounded-full min-w-[160px] shadow-xl transform hover:scale-105 transition-all"
-              onClick={() => scrollToSection("services")}
+              onClick={() => {
+                if (!isAuthenticated) {
+                  setIsAuthOpen(true)
+                } else {
+                  setIsAuthOpen(true)
+
+                  // router.push("/dashboard")
+                }
+              }}
             >
               {/* VOLUNTEER */}
-              Become a Gau sevek
+              Become a Gau sevak
             </Button>
           </div>
 
-          {/* {!isAuthenticated && (
+          {!isAuthenticated && (
             <Dialog open={isAuthOpen} onOpenChange={setIsAuthOpen}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <DialogTrigger asChild>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-8 py-3 text-lg font-semibold rounded-full min-w-[120px] shadow-lg"
-                  >
-                    LOGIN
-                  </Button>
-                </DialogTrigger>
-                <DialogTrigger asChild>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-8 py-3 text-lg font-semibold rounded-full min-w-[120px] shadow-lg"
-                  >
-                    SIGN UP
-                  </Button>
-                </DialogTrigger>
-              </div>
               <DialogContent className="sm:max-w-md">
                 <AuthModal onClose={() => setIsAuthOpen(false)} />
               </DialogContent>
             </Dialog>
-          )} */}
+          )}
 
           {isAuthenticated && (
             <Dialog open={isPreviewOpen} onOpenChange={setIsPreviewOpen}>
@@ -194,28 +182,24 @@ export default function HeroBanner() {
                   </button>
                 </div>
 
-                {/* Right side - Logo and Auth */}
+                {/* Right side - Auth buttons (open global dialog) */}
                 <div className="flex items-center space-x-4">
-                  
                   {!isAuthenticated && (
-                    <Dialog open={isAuthOpen} onOpenChange={setIsAuthOpen}>
-                      <DialogTrigger asChild>
-                        <Button
-                          variant="outline"
-                          className="border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-6 py-2 rounded-lg font-semibold transition-all bg-transparent"
-                        >
-                          Login
-                        </Button>
-                      </DialogTrigger>
-                      <DialogTrigger asChild>
-                        <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-all">
-                          Sign Up
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="sm:max-w-md">
-                        <AuthModal onClose={() => setIsAuthOpen(false)} />
-                      </DialogContent>
-                    </Dialog>
+                    <>
+                      <Button
+                        variant="outline"
+                        className="border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white px-6 py-2 rounded-lg font-semibold transition-all bg-transparent"
+                        onClick={() => setIsAuthOpen(true)}
+                      >
+                        Login
+                      </Button>
+                      <Button
+                        className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-all"
+                        onClick={() => setIsAuthOpen(true)}
+                      >
+                        Sign Up
+                      </Button>
+                    </>
                   )}
                 </div>
               </div>
@@ -245,24 +229,21 @@ export default function HeroBanner() {
                     Contact
                   </button>
                   {!isAuthenticated && (
-                    <Dialog open={isAuthOpen} onOpenChange={setIsAuthOpen}>
-                      <DialogTrigger asChild>
-                        <Button
-                          variant="outline"
-                          className="border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white mx-4 mt-2 rounded-lg font-semibold bg-transparent"
-                        >
-                          Login
-                        </Button>
-                      </DialogTrigger>
-                      <DialogTrigger asChild>
-                        <Button className="bg-orange-500 hover:bg-orange-600 text-white mx-4 mb-2 rounded-lg font-semibold">
-                          Sign Up
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="sm:max-w-md">
-                        <AuthModal onClose={() => setIsAuthOpen(false)} />
-                      </DialogContent>
-                    </Dialog>
+                    <>
+                      <Button
+                        variant="outline"
+                        className="border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white mx-4 mt-2 rounded-lg font-semibold bg-transparent"
+                        onClick={() => setIsAuthOpen(true)}
+                      >
+                        Login
+                      </Button>
+                      <Button
+                        className="bg-orange-500 hover:bg-orange-600 text-white mx-4 mb-2 rounded-lg font-semibold"
+                        onClick={() => setIsAuthOpen(true)}
+                      >
+                        Sign Up
+                      </Button>
+                    </>
                   )}
                 </div>
               )}

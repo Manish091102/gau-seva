@@ -113,13 +113,13 @@ export default function CardGenerator({ user: initialUser, onComplete }: CardGen
 
       <CardContent className="space-y-6">
         {/* Progress Bar */}
-        <div className="space-y-2">
+        {/* <div className="space-y-2">
           <div className="flex justify-between text-sm">
             <span className="text-gray-600">Progress</span>
             <span className="font-medium">{Math.round(progress)}%</span>
           </div>
           <Progress value={progress} className="h-2" />
-        </div>
+        </div> */}
 
         {/* Steps */}
         <div className="space-y-3">

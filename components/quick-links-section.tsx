@@ -1,6 +1,12 @@
+"use client"
+
 import { Heart, Calendar, Users, ShoppingBag } from "lucide-react"
+import { useState } from "react"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+import AuthModal from "@/components/auth-modal"
 
 export default function QuickLinksSection() {
+  const [isAuthOpen, setIsAuthOpen] = useState(false)
   const quickLinks = [
     // {
     //   icon: Heart,
@@ -40,6 +46,11 @@ export default function QuickLinksSection() {
               <div
                 key={index}
                 className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+                onClick={() => {
+                  if (link.title === "Volunteer") {
+                    setIsAuthOpen(true)
+                  }
+                }}
               >
                 <div className="text-center">
                   <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 mb-4`}>
@@ -52,6 +63,12 @@ export default function QuickLinksSection() {
             )
           })}
         </div>
+
+        <Dialog open={isAuthOpen} onOpenChange={setIsAuthOpen}>
+          <DialogContent className="sm:max-w-md">
+            <AuthModal onClose={() => setIsAuthOpen(false)} />
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   )

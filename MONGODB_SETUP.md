@@ -14,7 +14,7 @@ npm install mongodb mongoose
 2. Create a `.env.local` file in the root directory with the following variables:
 ```env
 # MongoDB Configuration
-MONGODB_URI=mongodb+srv://manish091102:gauseva@cluster0.sij3u6j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+MONGODB_URI=mongodb://localhost:27017/gau-seva
 
 # JWT Secret
 JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
@@ -28,7 +28,7 @@ NODE_ENV=development
 ### Option 1: Local MongoDB
 1. Install MongoDB Community Server
 2. Start MongoDB service
-3. Use connection string: `mongodb+srv://manish091102:gauseva@cluster0.sij3u6j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+3. Use connection string: `mongodb://localhost:27017/gau-seva`
 
 ### Option 2: MongoDB Atlas (Recommended for production)
 1. Create account at [MongoDB Atlas](https://www.mongodb.com/atlas)

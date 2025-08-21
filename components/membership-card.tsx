@@ -188,7 +188,7 @@ export default function MembershipCard({ user }: MembershipCardProps) {
             <div className="text-right text-black text-xs">
               <p>Registered Address</p>
               <p>www.gausevabharat.com |</p>
-              <p>email here</p>
+              {/* <p>email here</p> */}
             </div>
           </div>
         </div>

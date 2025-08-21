@@ -75,6 +75,7 @@ export async function POST(request: NextRequest) {
       id: user._id,
       name: user.name,
       state: user.state,
+      district: user.district,
       mobile: user.mobile,
       photo: user.photo,
       membershipNumber: user.membershipNumber,

@@ -3,6 +3,7 @@ interface ApiResponse<T = any> {
   message?: string
   error?: string
   data?: T
+  [key: string]: any
 }
 
 class ApiClient {
@@ -35,19 +36,18 @@ class ApiClient {
   private async request<T>(endpoint: string, options: RequestInit = {}): Promise<ApiResponse<T>> {
     const url = `${this.baseUrl}${endpoint}`
 
-    const headers: HeadersInit = {
-      "Content-Type": "application/json",
-      ...options.headers,
-    }
-
+    // Normalize headers into a plain object to avoid type issues with HeadersInit
+    const normalized = new Headers(options.headers)
+    const headersObj: Record<string, string> = Object.fromEntries(normalized.entries())
+    headersObj["Content-Type"] = headersObj["Content-Type"] || "application/json"
     if (this.token) {
-      headers.Authorization = `Bearer ${this.token}`
+      headersObj["Authorization"] = `Bearer ${this.token}`
     }
 
     try {
       const response = await fetch(url, {
         ...options,
-        headers,
+        headers: headersObj,
       })
 
       const data = await response.json()

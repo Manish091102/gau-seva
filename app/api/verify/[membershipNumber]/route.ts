@@ -31,6 +31,7 @@ export async function GET(request: NextRequest, { params }: { params: { membersh
       member: {
         name: user.name,
         state: user.state,
+        district: user.district,
         membershipNumber: user.membershipNumber,
         memberSince: user.createdAt,
         organization: "Gau Seva",

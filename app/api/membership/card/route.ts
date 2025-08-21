@@ -7,6 +7,7 @@ interface User {
   id: string
   name: string
   state: string
+  district: string
   mobile: string
   photo?: string
   membershipNumber: string
@@ -78,6 +79,7 @@ export async function GET(request: NextRequest) {
         id: String(user._id),
         name: user.name,
         state: user.state,
+        district: user.district,
         mobile: user.mobile,
         photo: user.photo,
         membershipNumber: user.membershipNumber,

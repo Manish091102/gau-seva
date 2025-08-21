@@ -19,6 +19,7 @@ interface AuthModalProps {
 interface FormErrors {
   name?: string
   state?: string
+  district?: string,
   mobile?: string
   photo?: string
   otp?: string
@@ -31,10 +32,11 @@ export default function AuthModal({ onClose }: AuthModalProps) {
     name: "",
     state: "",
     mobile: "",
-    photo: null as File | null,
+    district: "",
+    photo: undefined as File | undefined,
   })
   const [otpSent, setOtpSent] = useState(false)
-  const [otp, setOtp] = useState("")
+  const [otp, setOtp] = useState("123456")
   const [errors, setErrors] = useState<FormErrors>({})
   const [successMessage, setSuccessMessage] = useState("")
   const [showCardGenerator, setShowCardGenerator] = useState(false)
@@ -99,6 +101,10 @@ export default function AuthModal({ onClose }: AuthModalProps) {
         newErrors.state = "State is required"
       }
 
+      if (!formData.district) {
+        newErrors.district = "district is required"
+      }
+
       // if (!formData.photo) {
       //   newErrors.photo = "Profile photo is required"
       // }
@@ -141,15 +147,26 @@ export default function AuthModal({ onClose }: AuthModalProps) {
     }
   }
 
+  const finishConst = () => {
+    return {
+      name: formData?.name,
+      state: formData?.state,
+      mobile: formData?.mobile,
+      district: formData?.district,
+    };
+  };
+  
+
   const handleSendOtp = async () => {
     if (!validateForm()) return
 
     clearError()
-    const success = await sendOtp(formData.mobile)
-    if (success) {
-      setOtpSent(true)
-      setSuccessMessage("OTP sent successfully!")
-    }
+    // Skip actual send; simulate success and prefill OTP 123456
+    setOtpSent(true)
+    setOtp("123456")
+    setSuccessMessage("OTP sent successfully!")
+    // Immediately proceed to verification to skip OTP step in UI
+    void handleVerifyOtp()
   }
 
   const handleVerifyOtp = async () => {
@@ -160,7 +177,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
     clearError()
 
     if (isLogin) {
-      const success = await login(formData.mobile, otp)
+      const success = await login(formData.mobile, otp="123456")
       console.log("success", success)
       if (success) {
         console.log("Login successful!")
@@ -175,6 +192,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
       // For signup, first verify OTP then create account
       const otpValid = await verifyOtp(formData.mobile, otp)
       if (otpValid) {
+        console.log(formData, "formData")
         const success = await signup(formData)
         if (success) {
           console.log("signup success", success)
@@ -188,7 +206,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
   }
 
   const resetForm = () => {
-    setFormData({ name: "", state: "", mobile: "", photo: null })
+    setFormData({ name: "", state: "", mobile: "", district: "", photo: undefined })
     setOtp("")
     setOtpSent(false)
     setErrors({})
@@ -306,24 +324,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
               </Button>
             ) : (
               <div className="space-y-4">
-                <div>
-                  <Label htmlFor="otp">Enter OTP</Label>
-                  <Input
-                    id="otp"
-                    placeholder="Enter 6-digit OTP"
-                    value={otp}
-                    onChange={(e) => setOtp(e.target.value)}
-                    maxLength={6}
-                    className={errors.otp ? "border-red-500" : ""}
-                    disabled={isLoading}
-                  />
-                  {errors.otp && (
-                    <p className="text-sm text-red-600 mt-1 flex items-center gap-1">
-                      <AlertCircle className="h-3 w-3" />
-                      {errors.otp}
-                    </p>
-                  )}
-                </div>
+                {/* OTP auto-filled; hide input and directly allow verification */}
                 <Button
                   className="w-full bg-orange-600 hover:bg-orange-700"
                   onClick={handleVerifyOtp}
@@ -395,6 +396,24 @@ export default function AuthModal({ onClose }: AuthModalProps) {
                 </div>
 
                 <div>
+                  <Label htmlFor="district">District *</Label>
+                  <Input
+                    id="district"
+                    placeholder="Enter your district"
+                    value={formData.district}
+                    onChange={(e) => setFormData({ ...formData, district: e.target.value })}
+                    className={errors.district ? "border-red-500" : ""}
+                    disabled={isLoading}
+                  />
+                  {errors.district && (
+                    <p className="text-sm text-red-600 mt-1 flex items-center gap-1">
+                      <AlertCircle className="h-3 w-3" />
+                      {errors.district}
+                    </p>
+                  )}
+                </div>
+
+                <div>
                   <Label htmlFor="mobile">Mobile Number *</Label>
                   <Input
                     id="mobile"
@@ -414,7 +433,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
                 </div>
 
                 <div>
-                  <Label htmlFor="photo">Profile Photo *</Label>
+                  <Label htmlFor="photo">Profile Photo</Label>
                   <div className="mt-2">
                     <label htmlFor="photo" className="cursor-pointer">
                       <div
@@ -467,26 +486,9 @@ export default function AuthModal({ onClose }: AuthModalProps) {
               /* OTP Verification */
               <div className="space-y-4">
                 <div className="text-center">
-                  <p className="text-sm text-gray-600 mb-4">OTP sent to +91 {formData.mobile}</p>
+                  <p className="text-sm text-gray-600 mb-4">+91 {formData.mobile}</p>
                 </div>
-                <div>
-                  <Label htmlFor="otp">Enter OTP</Label>
-                  <Input
-                    id="otp"
-                    placeholder="Enter 6-digit OTP"
-                    value={otp}
-                    onChange={(e) => setOtp(e.target.value)}
-                    maxLength={6}
-                    className={errors.otp ? "border-red-500" : ""}
-                    disabled={isLoading}
-                  />
-                  {errors.otp && (
-                    <p className="text-sm text-red-600 mt-1 flex items-center gap-1">
-                      <AlertCircle className="h-3 w-3" />
-                      {errors.otp}
-                    </p>
-                  )}
-                </div>
+                {/* OTP auto-filled; hide input and directly allow verification */}
                 <Button
                   className="w-full bg-orange-600 hover:bg-orange-700"
                   onClick={handleVerifyOtp}

@@ -2,7 +2,7 @@ import { CheckCircle, Heart, Star, Zap, Shield } from "lucide-react"
 
 export default function VolunteerSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-[#e28154] via-[#e28154] to-[#e28154] relative overflow-hidden">
       {/* Floating Elements */}
       {/* <div className="absolute inset-0">
         <div className="absolute top-20 left-10 text-white/20 text-6xl animate-bounce">🐄</div>

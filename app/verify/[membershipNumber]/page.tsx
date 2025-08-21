@@ -12,6 +12,7 @@ interface VerificationData {
   member?: {
     name: string
     state: string
+    district: string,
     membershipNumber: string
     memberSince: string
     organization: string

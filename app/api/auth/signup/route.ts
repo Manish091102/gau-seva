@@ -6,6 +6,7 @@ import User from "@/models/User"
 interface SignupRequest {
   name: string
   state: string
+  district: string
   mobile: string
   photo?: string
 }
@@ -17,11 +18,11 @@ export async function POST(request: NextRequest) {
     await dbConnect()
     
     const body: SignupRequest = await request.json()
-    const { name, state, mobile, photo } = body
+    const { name, state, mobile, photo, district } = body
 
     // Validate required fields
-    if (!name || !state || !mobile) {
-      return NextResponse.json({ error: "Name, state, and mobile are required" }, { status: 400 })
+    if (!name || !state || !mobile || !district) {
+      return NextResponse.json({ error: "Name, state, district, and mobile are required" }, { status: 400 })
     }
 
     // Validate mobile number
@@ -46,6 +47,7 @@ export async function POST(request: NextRequest) {
       state,
       mobile,
       photo,
+      district,
     })
 
     await newUser.save()
@@ -63,7 +65,9 @@ export async function POST(request: NextRequest) {
       name: newUser.name,
       state: newUser.state,
       mobile: newUser.mobile,
-      photo:"https://fastly.picsum.photos/id/67/200/300.jpg?hmac=GntzjckKE7-naeHFrr8ZEIIaj3Bm-Iln4f844p1Np08",
+      district: newUser.district,
+      // photo:"https://fastly.picsum.photos/id/67/200/300.jpg?hmac=GntzjckKE7-naeHFrr8ZEIIaj3Bm-Iln4f844p1Np08",
+      photo:newUser.photo,
       membershipNumber: newUser.membershipNumber,
       createdAt: newUser.createdAt,
     }

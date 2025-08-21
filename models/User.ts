@@ -4,6 +4,7 @@ export interface IUser extends Document {
   name: string
   mobile: string
   state: string
+  district: string
   photo?: string
   membershipNumber: string
   isActive: boolean
@@ -27,6 +28,11 @@ const UserSchema = new Schema<IUser>({
   state: {
     type: String,
     required: [true, 'State is required'],
+    trim: true
+  },
+  district: {
+    type: String,
+    required: [true, 'district is required'],
     trim: true
   },
   photo: {

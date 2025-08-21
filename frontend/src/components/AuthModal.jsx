@@ -59,6 +59,8 @@ const AuthModal = ({ open, onOpenChange }) => {
         photo: photoPreview, // Base64 string
       }
 
+      console.log("ooo")
+
       await signup(userData)
       setStep("complete")
 

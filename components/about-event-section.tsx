@@ -1,6 +1,6 @@
 export default function AboutEventSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-orange-400 via-red-500 to-purple-600 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-[#f8f0de] via-[#f8f0de] to-[#f8f0de] relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
@@ -12,9 +12,9 @@ export default function AboutEventSection() {
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-8 py-3 mb-6">
-            <span className="text-white font-bold text-lg">🌟 HISTORIC EVENT 🌟</span>
+            <span className="text-black font-bold text-lg">HISTORIC EVENT </span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-black text-white mb-6 drop-shadow-2xl">
+          <h2 className="text-5xl md:text-7xl font-black text-black mb-6 drop-shadow-2xl">
             About the Event
           </h2>
           <h3 className="text-2xl md:text-3xl font-bold text-yellow-300 mb-8 drop-shadow-lg">
