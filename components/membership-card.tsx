@@ -120,25 +120,59 @@ export default function MembershipCard({ user }: MembershipCardProps) {
   }
   
 
+  // const handleDownload = async () => {
+  //   if (!cardRef.current) return
+  
+  //   try {
+  //     const { toPng } = await import("html-to-image")
+  
+  //     const dataUrl = await toPng(cardRef.current, {
+  //       cacheBust: true,
+  //       backgroundColor: "#ffffff", // force white background
+  //     })
+  
+  //     const link = document.createElement("a")
+  //     link.download = `gau-seva-membership-${user.membershipNumber}.png`
+  //     link.href = dataUrl
+  //     link.click()
+  //   } catch (error) {
+  //     console.error("Failed to download card:", error)
+  //   }
+  // }
+
   const handleDownload = async () => {
-    if (!cardRef.current) return
+    if (!cardRef.current) return;
   
     try {
-      const { toPng } = await import("html-to-image")
+      const { toPng } = await import("html-to-image");
+  
+      // Temporarily force desktop width for export
+      const originalWidth = cardRef.current.style.width;
+      const originalTransform = cardRef.current.style.transform;
+  
+      cardRef.current.style.width = "640px";   // desktop size
+      cardRef.current.style.transform = "scale(1)"; // reset scaling
   
       const dataUrl = await toPng(cardRef.current, {
         cacheBust: true,
-        backgroundColor: "#ffffff", // force white background
-      })
+        backgroundColor: "#ffffff",
+        pixelRatio: 3, // high resolution
+      });
   
-      const link = document.createElement("a")
-      link.download = `gau-seva-membership-${user.membershipNumber}.png`
-      link.href = dataUrl
-      link.click()
+      // Restore original size after export
+      cardRef.current.style.width = originalWidth;
+      cardRef.current.style.transform = originalTransform;
+  
+      // Download
+      const link = document.createElement("a");
+      link.download = `gau-seva-membership-${user.membershipNumber}.png`;
+      link.href = dataUrl;
+      link.click();
     } catch (error) {
-      console.error("Failed to download card:", error)
+      console.error("Failed to download card:", error);
     }
-  }
+  };
+  
   
 
   const qrData = JSON.stringify({
@@ -161,7 +195,7 @@ export default function MembershipCard({ user }: MembershipCardProps) {
       {/* Membership Card */}
       <div
         ref={cardRef}
-        className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-orange-200 md:aspect-[1.6/1] aspect-[1.6/1.4]"
+        className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-orange-200 md:aspect-[1.6/1] aspect-[1.6/1]"
         style={{
           backgroundColor: "#ffffff",
           color: "#000000",
@@ -197,8 +231,12 @@ export default function MembershipCard({ user }: MembershipCardProps) {
           <div className="flex justify-between items-start">
             {/* Left Side - Membership Details */}
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-black mb-4">MEMBERSHIP CARD</h3>
-              <div className="space-y-2 text-sm">
+              {/* <h3 className="text-xl font-bold text-black mb-4">MEMBERSHIP CARD</h3> */}
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-black mb-4">
+  MEMBERSHIP CARD
+</h3>
+
+              <div className="space-y-2 text-xs sm:text-sm md:text-base">
                 <div className="flex">
                   <span className="font-medium text-gray-700 w-16">ID:</span>
                   <span className="text-black">{user.mobile}</span>
