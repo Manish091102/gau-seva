@@ -17,7 +17,8 @@ export default function VolunteerSection() {
             <span className="text-white font-bold text-lg">JOIN THE REVOLUTION</span>
           </div>
           <h2 className="text-5xl md:text-7xl font-black text-white mb-6 drop-shadow-2xl">
-            Be a part of positive nation-building
+            Be a part of positive <br/>
+            nation-building
           </h2>
           <h3 className="text-2xl md:text-3xl font-bold text-yellow-300 mb-8 drop-shadow-lg">
             Become a Gausevak – Be the Change
@@ -34,51 +35,47 @@ export default function VolunteerSection() {
             </div>
             
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-2xl border-l-4 border-green-500 transform hover:scale-105 transition-transform">
-                  <div className="flex items-center gap-4">
-                    {/* <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                      <Shield className="w-6 h-6 text-white" />
-                    </div> */}
-                    <p className="text-gray-800 font-semibold">
-                      Save cows from neglect, plastic, and injury by supporting structured care.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="bg-gradient-to-r from-blue-100 to-cyan-100 p-6 rounded-2xl border-l-4 border-blue-500 transform hover:scale-105 transition-transform">
-                  <div className="flex items-center gap-4">
-                    {/* <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-white" />
-                    </div> */}
-                    <p className="text-gray-800 font-semibold">
-                      Help build sustainable solutions through organic fertilizers, biogas, and eco-products.
-                    </p>
-                  </div>
+              <div className="bg-gradient-to-r from-orange-100 to-orange-100 p-6 rounded-2xl border-l-4 border-orange-500 transform hover:scale-105 transition-transform h-full flex items-center">
+                <div className="flex items-center gap-4">
+                  {/* <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div> */}
+                  <p className="text-gray-800 font-semibold">
+                    Save cows from neglect, plastic, and injury by supporting structured care.
+                  </p>
                 </div>
               </div>
               
-              <div className="space-y-6">
-                <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-6 rounded-2xl border-l-4 border-purple-500 transform hover:scale-105 transition-transform">
-                  <div className="flex items-center gap-4">
-                    {/* <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
-                      <Star className="w-6 h-6 text-white" />
-                    </div> */}
-                    <p className="text-gray-800 font-semibold">
-                      Spread awareness across villages, towns, and schools.
-                    </p>
-                  </div>
+              <div className="bg-gradient-to-r from-orange-100 to-orange-100 p-6 rounded-2xl border-l-4 border-orange-500 transform hover:scale-105 transition-transform h-full flex items-center">
+                <div className="flex items-center gap-4">
+                  {/* <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                    <Star className="w-6 h-6 text-white" />
+                  </div> */}
+                  <p className="text-gray-800 font-semibold">
+                    Spread awareness across villages, towns, and schools.
+                  </p>
                 </div>
-                
-                <div className="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-2xl border-l-4 border-red-500 transform hover:scale-105 transition-transform">
-                  <div className="flex items-center gap-4">
-                    {/* <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
-                      <Heart className="w-6 h-6 text-white" />
-                    </div> */}
-                    <p className="text-gray-800 font-semibold">
-                      Experience the joy of selfless service (seva) and the blessings that follow.
-                    </p>
-                  </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-orange-100 to-orange-100 p-6 rounded-2xl border-l-4 border-orange-500 transform hover:scale-105 transition-transform h-full flex items-center">
+                <div className="flex items-center gap-4">
+                  {/* <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                    <Zap className="w-6 h-6 text-white" />
+                  </div> */}
+                  <p className="text-gray-800 font-semibold">
+                    Help build sustainable solutions through organic fertilizers, biogas, and eco-products.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-orange-100 to-orange-100 p-6 rounded-2xl border-l-4 border-orange-500 transform hover:scale-105 transition-transform h-full flex items-center">
+                <div className="flex items-center gap-4">
+                  {/* <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div> */}
+                  <p className="text-gray-800 font-semibold">
+                    Experience the joy of selfless service (seva) and the blessings that follow.
+                  </p>
                 </div>
               </div>
             </div>

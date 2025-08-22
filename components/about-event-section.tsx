@@ -17,7 +17,7 @@ export default function AboutEventSection() {
           <h2 className="text-5xl md:text-7xl font-black text-black mb-6 drop-shadow-2xl">
             About the Event
           </h2>
-          <h3 className="text-2xl md:text-3xl font-bold text-yellow-300 mb-8 drop-shadow-lg">
+          <h3 className="text-2xl md:text-3xl font-bold text-black-300 mb-8 drop-shadow-lg">
             Gau Seva Abhiyan – A Call to Serve Gau Mata
           </h3>
         </div>
@@ -25,14 +25,14 @@ export default function AboutEventSection() {
         <div className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl p-10 border-4 border-white/30">
           <div className="space-y-8 text-gray-800 leading-relaxed">
             <div className="relative">
-              <div className="absolute -left-4 top-0 w-2 h-full bg-gradient-to-b from-orange-500 to-red-500 rounded-full"></div>
+              <div className="absolute -left-4 top-0 w-2 h-full bg-gradient-to-b from-orange-500 to-orange-600 rounded-full"></div>
               <p className="text-xl font-semibold pl-6">
                 On <span className="text-orange-600 font-black text-2xl">26th August, 2 PM</span> at <span className="bg-orange-100 px-3 py-1 rounded-full font-bold">Town Hall, Gandhinagar</span>, Vlee Charitable Trust invites you to join a
-                <span className="text-red-600 font-bold"> historic gathering</span> dedicated to Gau Seva — the selfless service of cows.
+                <span className="text-orange-700 font-bold"> historic gathering</span> dedicated to Gau Seva — the selfless service of cows.
               </p>
             </div>
             
-            <div className="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-l-4 border-orange-500">
+            <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-2xl border-l-4 border-orange-500">
               <p className="text-lg">
                 This event is more than a ceremony; it is the <span className="font-bold text-orange-700">beginning of a movement</span>. Saints, trustees, and
                 community leaders will share their vision of a society where every cow receives care, nourishment,
@@ -41,12 +41,12 @@ export default function AboutEventSection() {
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-2xl">
-                <h4 className="font-bold text-purple-700 mb-3"> Ancient Tradition</h4>
+              <div className="bg-gradient-to-br from-[#f8f0de] to-orange-50 p-6 rounded-2xl border border-orange-200">
+                <h4 className="font-bold text-orange-700 mb-3"> Ancient Tradition</h4>
                 <p>From ancient tradition to modern science, the cow has always been central to our culture and sustainability.</p>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-2xl">
-                <h4 className="font-bold text-green-700 mb-3"> Modern Solutions</h4>
+              <div className="bg-gradient-to-br from-orange-50 to-[#f8f0de] p-6 rounded-2xl border border-orange-200">
+                <h4 className="font-bold text-orange-700 mb-3"> Modern Solutions</h4>
                 <p>Organic farming, biogas, and Ayurvedic wisdom — together we'll take a pledge to protect and serve our Gau Mata.</p>
               </div>
             </div>
