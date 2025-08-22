@@ -2,8 +2,8 @@ import { type NextRequest, NextResponse } from "next/server"
 import { SignJWT } from "jose"
 
 const JWT_SECRET = new TextEncoder().encode("your-secret-key")
-const ADMIN_USERNAME = "admin"
-const ADMIN_PASSWORD = "admin123" // In production, use environment variables
+const ADMIN_USERNAME = "gausevaadmin"
+const ADMIN_PASSWORD = "G@$VAgWc&chj" // In production, use environment variables
 
 export async function POST(request: NextRequest) {
   try {
