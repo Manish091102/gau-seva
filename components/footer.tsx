@@ -65,7 +65,7 @@ export default function Footer() {
             <div className="space-y-4 text-gray-300">
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-orange-400" />
-                <p>+91 98765 43210</p>
+                <p>+91 87587 02070</p>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-orange-400 mt-1" />
@@ -79,7 +79,7 @@ export default function Footer() {
           <div className="flex items-center justify-center gap-3">
             <p className="text-gray-400">Made with</p>
             <Heart className="h-5 w-5 text-red-500 animate-pulse" />
-            <p className="text-gray-400">for GauSeva by CI360degrees.com 2025</p>
+            <p className="text-gray-400">for GauSeva by Able Marketing 2025</p>
           </div>
         </div>
       </div>

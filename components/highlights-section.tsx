@@ -10,7 +10,7 @@ export default function HighlightsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Live Cow Cam */}
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="bg-purple-600 text-white p-4">
+            <div className="bg-orange-600 text-white p-4">
               <h3 className="font-semibold">Live Cow Cam</h3>
             </div>
             <div className="p-6">
@@ -21,28 +21,28 @@ export default function HighlightsSection() {
                 Watch our cows live as they graze peacefully in our sanctuary. Connect with these divine beings in
                 real-time.
               </p>
-              <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded text-sm">LIVE NOW</button>
+              <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded text-sm">LIVE NOW</button>
             </div>
           </div>
 
           {/* Adoption Tracker */}
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="bg-green-600 text-white p-4">
+            <div className="bg-orange-600 text-white p-4">
               <h3 className="font-semibold">Adoption Tracker</h3>
             </div>
             <div className="p-6">
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600">127</div>
+                  <div className="text-2xl font-bold text-orange-600">127</div>
                   <div className="text-sm text-gray-600">Cows Adopted</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600">43</div>
+                  <div className="text-2xl font-bold text-orange-600">43</div>
                   <div className="text-sm text-gray-600">Pending Adoption</div>
                 </div>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
-                <div className="bg-green-600 h-2 rounded-full" style={{ width: "75%" }}></div>
+                <div className="bg-orange-600 h-2 rounded-full" style={{ width: "75%" }}></div>
               </div>
               <p className="text-gray-600 text-sm">
                 Help us reach our goal of finding loving sponsors for all our cows by the end of this year.
