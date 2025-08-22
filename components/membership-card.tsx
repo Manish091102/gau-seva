@@ -248,6 +248,7 @@ import { Button } from "@/components/ui/button"
 import { Download, Share2 } from "lucide-react"
 import Image from "next/image"
 import logo from "./assets/image.png"
+import "./membershipCard.css"
 
 interface User {
   id: string
