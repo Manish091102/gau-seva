@@ -38,11 +38,11 @@ export default function MembershipCardPreview({ user }: MembershipCardPreviewPro
         {/* Mini Card Preview */}
         <div className="bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg p-4 text-white text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <span className="text-lg">🐄</span>
+            {/* <span className="text-lg">🐄</span> */}
             <span className="font-bold text-sm">GAU SEVA</span>
           </div>
           <p className="text-xs opacity-90 mb-2">{user.name.toUpperCase()}</p>
-          <p className="text-xs font-mono bg-white/20 rounded px-2 py-1 inline-block">{user.membershipNumber}</p>
+          {/* <p className="text-xs font-mono bg-white/20 rounded px-2 py-1 inline-block">{user.membershipNumber}</p> */}
         </div>
 
         {/* Action Buttons */}
@@ -59,10 +59,10 @@ export default function MembershipCardPreview({ user }: MembershipCardPreviewPro
             </DialogContent>
           </Dialog>
 
-          <Button variant="outline" className="w-full bg-transparent">
+          {/* <Button variant="outline" className="w-full bg-transparent">
             <Download className="mr-2 h-4 w-4" />
             Download Now
-          </Button>
+          </Button> */}
         </div>
 
         <div className="text-center">

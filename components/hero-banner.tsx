@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 import Image from "next/image"
 import logo from "./assets/image.png"
+import bannerImage from "./assets/bannerimage.png"
 
 export default function HeroBanner() {
   const { isAuthenticated, user } = useAuth()
@@ -32,12 +33,19 @@ export default function HeroBanner() {
     }
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem("authToken")
+    localStorage.removeItem("userData")
+    setIsPreviewOpen(false)
+    window.location.reload() // Refresh the page to update the UI
+  }
+
   return (
     <section
       id="home"
       className="relative h-screen bg-cover bg-center bg-no-repeat flex flex-col"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://perfectseva.com/wp-content/uploads/sites/8/2019/01/krishna-balram-psu360001683-small-original-imaejfhzgfxrmtta.jpg')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${bannerImage.src})`,
       }}
     >
       {/* Main Hero Content */}
@@ -95,7 +103,7 @@ export default function HeroBanner() {
 
           {isAuthenticated && (
             <Dialog open={isPreviewOpen} onOpenChange={setIsPreviewOpen}>
-              <div className="flex justify-center mt-2">
+              <div className="flex justify-center gap-4 mt-2">
                 <DialogTrigger asChild>
                   <Button
                     size="lg"
@@ -104,6 +112,14 @@ export default function HeroBanner() {
                     PREVIEW CARD
                   </Button>
                 </DialogTrigger>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-red-500 text-red-600 hover:bg-red-500 hover:text-white px-10 py-4 text-lg font-bold rounded-full min-w-[180px] shadow-xl transform hover:scale-105 transition-all"
+                  onClick={handleLogout}
+                >
+                  LOGOUT
+                </Button>
               </div>
               <DialogContent className="sm:max-w-lg">
                 <CardGenerator
@@ -184,6 +200,13 @@ export default function HeroBanner() {
 
                 {/* Right side - Auth buttons (open global dialog) */}
                 <div className="flex items-center space-x-4">
+                  {/* <Button
+                    variant="ghost"
+                    className="text-gray-600 hover:text-orange-600 px-4 py-2 rounded-lg font-medium transition-all"
+                    onClick={() => window.open("/admin/login", "_blank")}
+                  >
+                    Admin
+                  </Button> */}
                   {!isAuthenticated && (
                     <>
                       <Button

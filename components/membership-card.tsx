@@ -161,15 +161,14 @@ export default function MembershipCard({ user }: MembershipCardProps) {
       {/* Membership Card */}
       <div
         ref={cardRef}
-        className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-orange-200"
+        className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-orange-200 md:aspect-[1.6/1] aspect-[1.6/1.4]"
         style={{
-          aspectRatio: "1.6/1",
           backgroundColor: "#ffffff",
           color: "#000000",
         }}
       >
         {/* Header Section - Orange Background */}
-        <div className="bg-orange-500 px-6 py-4 relative">
+        <div className="bg-orange-500 px-6 py-4 relative md:py-2">
           <div className="flex items-center justify-between">
             {/* Left Side - Logo and Organization Name */}
             <div className="flex items-center gap-3">

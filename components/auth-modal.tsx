@@ -147,14 +147,6 @@ export default function AuthModal({ onClose }: AuthModalProps) {
     }
   }
 
-  const finishConst = () => {
-    return {
-      name: formData?.name,
-      state: formData?.state,
-      mobile: formData?.mobile,
-      district: formData?.district,
-    };
-  };
   
 
   const handleSendOtp = async () => {
@@ -164,7 +156,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
     // Skip actual send; simulate success and prefill OTP 123456
     setOtpSent(true)
     setOtp("123456")
-    setSuccessMessage("OTP sent successfully!")
+    // setSuccessMessage("OTP sent successfully!")
     // Immediately proceed to verification to skip OTP step in UI
     void handleVerifyOtp()
   }
@@ -177,7 +169,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
     clearError()
 
     if (isLogin) {
-      const success = await login(formData.mobile, otp="123456")
+      const success = await login(formData.mobile, otp)
       console.log("success", success)
       if (success) {
         console.log("Login successful!")
@@ -313,12 +305,12 @@ export default function AuthModal({ onClose }: AuthModalProps) {
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Sending OTP...
+                    Submitting...
                   </>
                 ) : (
                   <>
-                    <Phone className="mr-2 h-4 w-4" />
-                    Send OTP
+                    {/* <Phone className="mr-2 h-4 w-4" /> */}
+                    Submit
                   </>
                 )}
               </Button>
@@ -472,12 +464,12 @@ export default function AuthModal({ onClose }: AuthModalProps) {
                   {isLoading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Sending OTP...
+                      Submitting...
                     </>
                   ) : (
                     <>
-                      <Phone className="mr-2 h-4 w-4" />
-                      Send OTP
+                      {/* <Phone className="mr-2 h-4 w-4" /> */}
+                      Submit
                     </>
                   )}
                 </Button>
@@ -500,7 +492,7 @@ export default function AuthModal({ onClose }: AuthModalProps) {
                       Creating Account...
                     </>
                   ) : (
-                    "Verify OTP & Generate Membership Card"
+                    "Generate Membership Card"
                   )}
                 </Button>
                 <Button

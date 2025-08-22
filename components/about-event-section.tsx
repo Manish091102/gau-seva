@@ -42,11 +42,11 @@ export default function AboutEventSection() {
             
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-2xl">
-                <h4 className="font-bold text-purple-700 mb-3">🏛️ Ancient Tradition</h4>
+                <h4 className="font-bold text-purple-700 mb-3"> Ancient Tradition</h4>
                 <p>From ancient tradition to modern science, the cow has always been central to our culture and sustainability.</p>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-2xl">
-                <h4 className="font-bold text-green-700 mb-3">🌱 Modern Solutions</h4>
+                <h4 className="font-bold text-green-700 mb-3"> Modern Solutions</h4>
                 <p>Organic farming, biogas, and Ayurvedic wisdom — together we'll take a pledge to protect and serve our Gau Mata.</p>
               </div>
             </div>

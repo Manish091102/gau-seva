@@ -53,8 +53,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
           // Validate token by fetching user profile
           const response = await apiClient.getProfile()
-          if (response.success && response.data) {
-            setUser(response.data as User | null)
+          if (response.success && response.user) {
+            setUser(response.user as User | null)
           } else {
             // Token is invalid, clear it
             localStorage.removeItem("authToken")

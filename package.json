@@ -45,6 +45,7 @@
     "cmdk": "1.0.4",
     "cors": "latest",
     "date-fns": "4.1.0",
+    "deps": "^1.0.0",
     "dom-to-image": "^2.6.0",
     "dotenv": "latest",
     "embla-carousel-react": "8.5.1",

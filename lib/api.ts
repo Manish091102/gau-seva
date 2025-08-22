@@ -121,6 +121,31 @@ class ApiClient {
   async verifyMembership(membershipNumber: string) {
     return this.request(`/verify/${membershipNumber}`)
   }
+
+  // Admin endpoints
+  async adminLogin(username: string, password: string) {
+    return this.request("/admin/login", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+    })
+  }
+
+  async getUsers(params: {
+    page?: number
+    limit?: number
+    search?: string
+    sortBy?: string
+    sortOrder?: string
+  } = {}) {
+    const queryParams = new URLSearchParams()
+    if (params.page) queryParams.append("page", params.page.toString())
+    if (params.limit) queryParams.append("limit", params.limit.toString())
+    if (params.search) queryParams.append("search", params.search)
+    if (params.sortBy) queryParams.append("sortBy", params.sortBy)
+    if (params.sortOrder) queryParams.append("sortOrder", params.sortOrder)
+
+    return this.request(`/admin/users?${queryParams}`)
+  }
 }
 
 export const apiClient = new ApiClient()
