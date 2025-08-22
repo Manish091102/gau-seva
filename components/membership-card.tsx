@@ -184,7 +184,8 @@ export default function MembershipCard({ user }: MembershipCardProps) {
   })
 
   return (
-    <div className="p-6">
+    // <div className="p-6">
+    <div className="p-0 sm:p-4 md:p-6">
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-center mb-2">Your Membership Card</h3>
         <p className="text-sm text-gray-600 text-center">
@@ -194,13 +195,11 @@ export default function MembershipCard({ user }: MembershipCardProps) {
 
       {/* Membership Card */}
       <div
-        ref={cardRef}
-        className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-orange-200 md:aspect-[1.6/1] aspect-[1.6/1]"
-        style={{
-          backgroundColor: "#ffffff",
-          color: "#000000",
-        }}
-      >
+  ref={cardRef}
+  className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-orange-200 aspect-[1.6/1]"
+  style={{ backgroundColor: "#fff", color: "#000" }}
+>
+
         {/* Header Section - Orange Background */}
         <div className="bg-orange-500 px-6 py-4 relative md:py-2">
           <div className="flex items-center justify-between">
@@ -227,7 +226,9 @@ export default function MembershipCard({ user }: MembershipCardProps) {
         </div>
 
         {/* Main Content - White Background */}
-        <div className="p-6 bg-white relative">
+        {/* <div className="p-6 bg-white relative"> */}
+        <div className="p-2 sm:p-4 md:p-6 bg-white relative">
+
           <div className="flex justify-between items-start">
             {/* Left Side - Membership Details */}
             <div className="flex-1">
