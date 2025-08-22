@@ -27,14 +27,14 @@ export default function AboutEventSection() {
             <div className="relative">
               <div className="absolute -left-4 top-0 w-2 h-full bg-gradient-to-b from-orange-500 to-orange-600 rounded-full"></div>
               <p className="text-xl font-semibold pl-6">
-                On <span className="text-orange-600 font-black text-2xl">26th August, 2 PM</span> at <span className="bg-orange-100 px-3 py-1 rounded-full font-bold">Town Hall, Gandhinagar</span>, Vlee Charitable Trust invites you to join a
-                <span className="text-orange-700 font-bold"> historic gathering</span> dedicated to Gau Seva — the selfless service of cows.
+                On <span className="bg-orange-100 px-3 py-1 rounded-full font-bold"><span className="text-black-600 font-black text-2xl">26th August, 2 PM</span> at Town Hall, Gandhinagar</span>, Vlee Charitable Trust invites you to join a
+                <span className="text-black-700 font-bold"> historic gathering</span> dedicated to Gau Seva — the selfless service of cows.
               </p>
             </div>
             
             <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-2xl border-l-4 border-orange-500">
               <p className="text-lg">
-                This event is more than a ceremony; it is the <span className="font-bold text-orange-700">beginning of a movement</span>. Saints, trustees, and
+                This event is more than a ceremony; it is the <span className="font-bold text-black-700">beginning of a movement</span>. Saints, trustees, and
                 community leaders will share their vision of a society where every cow receives care, nourishment,
                 and dignity.
               </p>

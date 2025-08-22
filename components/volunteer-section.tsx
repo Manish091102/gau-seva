@@ -29,8 +29,8 @@ export default function VolunteerSection() {
           <div className="space-y-8">
             <div className="text-center">
               <p className="text-2xl font-bold text-gray-800 mb-4">
-                When you volunteer with Gau Seva, you become part of a mission that blends tradition with
-                <span className="text-green-600"> innovation</span>.
+                When you volunteer with Gau Seva, you become part of a mission that blends tradition with innovation
+                {/* <span className="text-green-600"> innovation</span>. */}
               </p>
             </div>
             
