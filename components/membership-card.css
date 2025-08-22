@@ -1,0 +1,27 @@
+/* Mobile preview: small fonts, full width */
+.membership-card-container .card {
+    padding: 0;
+  }
+  
+  .membership-card-container .card-title {
+    font-size: 1rem; /* small in preview */
+  }
+  
+  .membership-card-container .card-content {
+    font-size: 0.75rem; /* small in preview */
+  }
+  
+  /* Download mode: bigger fonts and desktop aspect ratio */
+  .card.download-mode {
+    width: 600px;  /* desktop width */
+    height: 375px; /* 1.6 ratio */
+  }
+  
+  .card.download-mode .card-title {
+    font-size: 1.25rem; /* bigger title */
+  }
+  
+  .card.download-mode .card-content {
+    font-size: 1rem; /* bigger content */
+  }
+  
