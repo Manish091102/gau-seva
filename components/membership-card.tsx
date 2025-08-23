@@ -117,7 +117,7 @@ export default function MembershipCard({ user }: MembershipCardProps) {
   })
 
   return (
-    <div className="p-6">
+    <div className="">
       <div className="mb-6">
         <h3 className="text-lg font-semibold text-center mb-2">Your Membership Card</h3>
         <p className="text-sm text-gray-600 text-center">
@@ -166,8 +166,8 @@ export default function MembershipCard({ user }: MembershipCardProps) {
             <div className="flex-1">
               {/* <h3 className="text-xl font-bold text-black mb-4">MEMBERSHIP CARD</h3> */}
               <h3 className="text-base sm:text-lg md:text-xl font-bold text-black mb-4">
-  MEMBERSHIP CARD
-</h3>
+                MEMBERSHIP CARD
+              </h3>
 
               <div className="space-y-2 text-xs sm:text-sm md:text-base">
                 <div className="flex">
