@@ -73,18 +73,57 @@ export default function MembershipCard({ user }: MembershipCardProps) {
   //   }
   // }
 
+  // const handleDownload = async () => {
+  //   if (!cardRef.current) return;
+  
+  //   try {
+  //     const { toPng } = await import("html-to-image");
+  
+  //     // Temporarily force desktop width for export
+  //     const originalWidth = cardRef.current.style.width;
+  //     const originalTransform = cardRef.current.style.transform;
+  
+  //     cardRef.current.style.width = "640px";   // desktop size
+  //     cardRef.current.style.transform = "scale(1)"; // reset scaling
+  
+  //     const dataUrl = await toPng(cardRef.current, {
+  //       cacheBust: true,
+  //       backgroundColor: "#ffffff",
+  //       pixelRatio: 3, // high resolution
+  //     });
+  
+  //     // Restore original size after export
+  //     cardRef.current.style.width = originalWidth;
+  //     cardRef.current.style.transform = originalTransform;
+  
+  //     // Download
+  //     const link = document.createElement("a");
+  //     link.download = `gau-seva-membership-${user.membershipNumber}.png`;
+  //     link.href = dataUrl;
+  //     link.click();
+  //   } catch (error) {
+  //     console.error("Failed to download card:", error);
+  //   }
+  // };
+
   const handleDownload = async () => {
     if (!cardRef.current) return;
   
     try {
       const { toPng } = await import("html-to-image");
   
-      // Temporarily force desktop width for export
+      // Save original styles
       const originalWidth = cardRef.current.style.width;
+      const originalHeight = cardRef.current.style.height;
       const originalTransform = cardRef.current.style.transform;
   
-      cardRef.current.style.width = "640px";   // desktop size
-      cardRef.current.style.transform = "scale(1)"; // reset scaling
+      // Force download at 1.6:1.4 ratio
+      const exportWidth = 640; // base width
+      const exportHeight = (exportWidth / 2.4); // enforce 1.6/1.4
+  
+      cardRef.current.style.width = `${exportWidth}px`;
+      cardRef.current.style.height = `${exportHeight}px`;
+      cardRef.current.style.transform = "scale(1)";
   
       const dataUrl = await toPng(cardRef.current, {
         cacheBust: true,
@@ -92,8 +131,9 @@ export default function MembershipCard({ user }: MembershipCardProps) {
         pixelRatio: 3, // high resolution
       });
   
-      // Restore original size after export
+      // Restore styles
       cardRef.current.style.width = originalWidth;
+      cardRef.current.style.height = originalHeight;
       cardRef.current.style.transform = originalTransform;
   
       // Download
@@ -106,8 +146,6 @@ export default function MembershipCard({ user }: MembershipCardProps) {
     }
   };
   
-  
-
   const qrData = JSON.stringify({
     name: user.name,
     membershipNumber: user.membershipNumber,
@@ -126,9 +164,17 @@ export default function MembershipCard({ user }: MembershipCardProps) {
       </div>
 
       {/* Membership Card */}
-      <div
+      {/* <div
         ref={cardRef}
         className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-orange-200 md:aspect-[1.6/1] aspect-[1.6/1]"
+        style={{
+          backgroundColor: "#ffffff",
+          color: "#000000",
+        }}
+      > */}
+      <div
+        ref={cardRef}
+        className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-orange-200 aspect-[1.6/1.4] md:aspect-[1.6/1]"
         style={{
           backgroundColor: "#ffffff",
           color: "#000000",
