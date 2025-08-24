@@ -1,8 +1,12 @@
+"use client"
+
+import { useRouter } from "next/navigation"
 import { Heart, MapPin, Phone } from "lucide-react"
 import Image from "next/image"
 import logo from "./assets/image.png"
 
 export default function Footer() {
+  const router = useRouter()
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-16 relative overflow-hidden">
       {/* Background Texture */}
@@ -33,16 +37,22 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6 text-orange-400">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#home" className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center">
+                <button 
+                  onClick={() => router.push("/")}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center"
+                >
                   <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
                   Home
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#about" className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center">
+                <button 
+                  onClick={() => router.push("/gauseva")}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center"
+                >
                   <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
-                  About
-                </a>
+                  GauSeva
+                </button>
               </li>
               <li>
                 <a href="#services" className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center">

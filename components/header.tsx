@@ -1,15 +1,19 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { User, LogIn, Menu, X, LogOut } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import AuthModal from "@/components/auth-modal"
 import { useAuth } from "@/contexts/auth-context"
+import Image from "next/image"
+import logo from "./assets/image.png"
 
 export default function Header() {
   const { user, logout, isAuthenticated } = useAuth()
+  const router = useRouter()
   const [isAuthOpen, setIsAuthOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -31,45 +35,57 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center cursor-pointer" onClick={() => scrollToSection("home")}>
-            <div className="flex-shrink-0">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">🐄</span>
-                </div>
-                <div>
+          <div className="flex items-center cursor-pointer" onClick={() => router.push("/")}>
+            {/* <div className="flex-shrink-0"> */}
+              {/* <div className="flex items-center gap-3"> */}
+                {/* <div className="w-20 h-20 flex items-center justify-center overflow-hidden"> */}
+                  <Image src={logo} alt="GauSeva" width={60} height={60} className="object-contain" />
+                {/* </div> */}
+                {/* <div>
                   <h1 className="text-xl font-bold text-orange-600">गौ सेवा</h1>
                   <p className="text-xs text-gray-600 -mt-1">Gau Seva</p>
-                </div>
-              </div>
-            </div>
+                </div> */}
+              {/* </div> */}
+            {/* </div> */}
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <button
-              onClick={() => scrollToSection("home")}
+            {/* <button
+              onClick={() => router.push("/")}
               className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
             >
               Home
-            </button>
+            </button> */}
             <button
-              onClick={() => scrollToSection("about")}
+              onClick={() => router.push("/gauseva")}
               className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
             >
-              About
+              GauSeva
             </button>
             <button
               onClick={() => scrollToSection("services")}
               className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
             >
-              Services
+              GauShala
             </button>
             <button
               onClick={() => scrollToSection("testimonials")}
               className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
             >
-              Testimonials
+              Founder's Page
+            </button>
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+            >
+              Become a GauSevak
+            </button>
+            <button
+              onClick={() => scrollToSection("testimonials")}
+              className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+            >
+              Adopt-a-cow
             </button>
           </nav>
 
@@ -138,29 +154,47 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-4">
             <div className="flex flex-col space-y-4">
-              <button
-                onClick={() => scrollToSection("home")}
+              {/* <button
+                onClick={() => {
+                  router.push("/")
+                  setIsMobileMenuOpen(false)
+                }}
                 className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
                 Home
-              </button>
+              </button> */}
               <button
-                onClick={() => scrollToSection("about")}
+                onClick={() => {
+                  router.push("/gauseva")
+                  setIsMobileMenuOpen(false)
+                }}
                 className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
-                About
+                GauSeva
               </button>
               <button
                 onClick={() => scrollToSection("services")}
                 className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
-                Services
+                GauShala
               </button>
               <button
                 onClick={() => scrollToSection("testimonials")}
                 className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
-                Testimonials
+                Founder's Page
+              </button>
+              <button
+                onClick={() => scrollToSection("services")}
+                className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              >
+                Become a GauSevak
+              </button>
+              <button
+                onClick={() => scrollToSection("testimonials")}
+                className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              >
+                Adopt-a-cow
               </button>
 
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">

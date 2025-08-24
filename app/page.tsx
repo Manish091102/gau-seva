@@ -15,8 +15,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* <Header /> */}
-        <HeroBanner />
+      <Header />
+      <HeroBanner />
       <main>
         <QuickLinksSection />
         <HighlightsSection />
