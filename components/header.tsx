@@ -64,13 +64,19 @@ export default function Header() {
               GauSeva
             </button>
             <button
-              onClick={() => scrollToSection("services")}
+              onClick={() => {
+                router.push("/gaushala")
+                setIsMobileMenuOpen(false)
+              }}
               className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
             >
               GauShala
             </button>
             <button
-              onClick={() => scrollToSection("testimonials")}
+              onClick={() => {
+                router.push("/founder")
+                setIsMobileMenuOpen(false)
+              }}
               className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
             >
               Founder's Page
@@ -173,13 +179,19 @@ export default function Header() {
                 GauSeva
               </button>
               <button
-                onClick={() => scrollToSection("services")}
+               onClick={() => {
+                router.push("/gaushala")
+                setIsMobileMenuOpen(false)
+              }}
                 className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
                 GauShala
               </button>
               <button
-                onClick={() => scrollToSection("testimonials")}
+                onClick={() => {
+                  router.push("/founder")
+                  setIsMobileMenuOpen(false)
+                }}
                 className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
               >
                 Founder's Page

@@ -10,20 +10,20 @@ export default function GauSevaPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-96 bg-gradient-to-r from-orange-100 to-orange-50 overflow-hidden">
+      <section className="relative h-96 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-qmHuxcNKVRcGKt4SNgszPIiQMw8weD.jpeg"
             src={gausevaBanner}
             alt="Cows being fed"
-            className="w-full h-full object-cover opacity-80"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          {/* <div className="absolute inset-0 bg-black/40"></div> */}
         </div>
-        <div className="relative z-10 flex items-center justify-center h-full text-center text-white">
-          <div>
+        <div className="relative z-10 flex items-end justify-center h-full text-center text-white">
+          <div className="pb-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-2">About Gau Seva</h1>
-            <p className="text-xl">by VLEE Charitable Trust</p>
+            <p className="text-2xl">by VLEE Charitable Trust</p>
           </div>
         </div>
       </section>
