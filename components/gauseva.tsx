@@ -168,12 +168,12 @@ export default function GauSevaPage() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card className="overflow-hidden py-0">
+          <Card className="overflow-hidden py-0 border-0 shadow-none">
             <div className="h-60 relative">
               <Image
                 src={missionOne}
                 alt="Protect and nurture cows"
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black-600/60 flex items-end p-4">
                 <p className="text-white font-semibold">Protect and nurture every cow with dignity</p>
@@ -181,12 +181,12 @@ export default function GauSevaPage() {
             </div>
           </Card>
 
-          <Card className="overflow-hidden py-0">
+          <Card className="overflow-hidden py-0 border-0 shadow-none">
             <div className="h-60  relative">
               <Image
                 src={missionTwo}
                 alt="Spread awareness"
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black-600/60 flex items-end p-4">
                 <p className="text-white font-semibold">
@@ -196,12 +196,12 @@ export default function GauSevaPage() {
             </div>
           </Card>
 
-          <Card className="overflow-hidden py-0">
+          <Card className="overflow-hidden py-0 border-0 shadow-none">
             <div className="h-60 relative">
               <Image
                 src={missionThree}
                 alt="Inspire participation"
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black-600/60 flex items-end p-4">
                 <p className="text-white font-semibold">
@@ -211,12 +211,12 @@ export default function GauSevaPage() {
             </div>
           </Card>
 
-          <Card className="overflow-hidden py-0">
+          <Card className="overflow-hidden py-0 border-0 shadow-none">
             <div className="h-60 relative">
               <Image
                 src={missionFour}
                 alt="Build sustainable model"
-                className="w-full h-full object-cover opacity-80"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black-600/60 flex items-end p-4">
                 <p className="text-white font-semibold">Build a sustainable, technology-enabled model of Gau care</p>
