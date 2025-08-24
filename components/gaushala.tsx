@@ -8,20 +8,6 @@ import history4 from "./assets/history4.png"
 import history5 from "./assets/history5.png"
 import dharma from "./assets/dharmameets.png"
 import gaushalatechbg from "./assets/Gaushalabg.png"
-import {
-  Home,
-  Droplets,
-  Utensils,
-  Stethoscope,
-  MapPin,
-  Truck,
-  Heart,
-  Activity,
-  Smartphone,
-  Camera,
-  Database,
-  Monitor,
-} from "lucide-react"
 
 export default function GauShalaPage() {
   return (

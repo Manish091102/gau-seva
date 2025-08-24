@@ -1,12 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { useState, useEffect } from "react"
+import { useRouter, usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-import { User, LogIn, Menu, X, LogOut } from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { User, LogIn, Menu, X, LogOut, Eye } from "lucide-react"
 import AuthModal from "@/components/auth-modal"
+import CardGenerator from "@/components/card-generator"
 import { useAuth } from "@/contexts/auth-context"
 import Image from "next/image"
 import logo from "./assets/image.png"
@@ -14,8 +14,10 @@ import logo from "./assets/image.png"
 export default function Header() {
   const { user, logout, isAuthenticated } = useAuth()
   const router = useRouter()
+  const pathname = usePathname()
   const [isAuthOpen, setIsAuthOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -53,13 +55,17 @@ export default function Header() {
           <nav className="hidden md:flex space-x-8">
             {/* <button
               onClick={() => router.push("/")}
-              className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              className={`transition-colors font-medium cursor-pointer ${
+                pathname === "/" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+              }`}
             >
               Home
             </button> */}
             <button
               onClick={() => router.push("/gauseva")}
-              className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              className={`transition-colors font-medium cursor-pointer ${
+                pathname === "/gauseva" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+              }`}
             >
               GauSeva
             </button>
@@ -68,7 +74,9 @@ export default function Header() {
                 router.push("/gaushala")
                 setIsMobileMenuOpen(false)
               }}
-              className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              className={`transition-colors font-medium cursor-pointer ${
+                pathname === "/gaushala" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+              }`}
             >
               GauShala
             </button>
@@ -77,19 +85,31 @@ export default function Header() {
                 router.push("/founder")
                 setIsMobileMenuOpen(false)
               }}
-              className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              className={`transition-colors font-medium cursor-pointer ${
+                pathname === "/founder" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+              }`}
             >
               Founder's Page
             </button>
             <button
-              onClick={() => scrollToSection("services")}
-              className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              onClick={() => {
+                router.push("/volunteer")
+                setIsMobileMenuOpen(false)
+              }}
+              className={`transition-colors font-medium cursor-pointer ${
+                pathname === "/volunteer" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+              }`}
             >
               Become a GauSevak
             </button>
             <button
-              onClick={() => scrollToSection("testimonials")}
-              className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+             onClick={() => {
+              router.push("/adopt-a-cow")
+              setIsMobileMenuOpen(false)
+            }}
+              className={`transition-colors font-medium cursor-pointer ${
+                pathname === "/adopt-a-cow" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+              }`}
             >
               Adopt-a-cow
             </button>
@@ -100,7 +120,7 @@ export default function Header() {
             {isAuthenticated && user ? (
               /* Authenticated User */
               <div className="flex items-center gap-3">
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                   <Avatar className="w-8 h-8">
                     <AvatarImage src={user.photo || "/placeholder.svg"} alt={user.name} />
                     <AvatarFallback className="bg-orange-100 text-orange-600 text-sm">
@@ -111,7 +131,32 @@ export default function Header() {
                     <p className="font-medium text-gray-900">{user.name}</p>
                     <p className="text-xs text-gray-500">Member #{user.membershipNumber}</p>
                   </div>
-                </div>
+                </div> */}
+                <Dialog open={isPreviewOpen} onOpenChange={setIsPreviewOpen}>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex items-center gap-2 bg-transparent border-gray-300"
+                    >
+                      <Eye className="h-4 w-4" />
+                      Preview
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-lg">
+                    <CardGenerator
+                      user={{
+                        id: user?.id,
+                        name: user?.name || "",
+                        state: user?.state || "",
+                        mobile: user?.mobile || "",
+                        photo: user?.photo,
+                        membershipNumber: user?.membershipNumber,
+                        createdAt: user?.createdAt,
+                      }}
+                    />
+                  </DialogContent>
+                </Dialog>
                 <Button
                   variant="outline"
                   size="sm"
@@ -174,7 +219,9 @@ export default function Header() {
                   router.push("/gauseva")
                   setIsMobileMenuOpen(false)
                 }}
-                className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
+                className={`text-left transition-colors font-medium cursor-pointer ${
+                  pathname === "/gauseva" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                }`}
               >
                 GauSeva
               </button>
@@ -183,7 +230,9 @@ export default function Header() {
                 router.push("/gaushala")
                 setIsMobileMenuOpen(false)
               }}
-                className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
+                className={`text-left transition-colors font-medium cursor-pointer ${
+                  pathname === "/gaushala" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                }`}
               >
                 GauShala
               </button>
@@ -192,19 +241,31 @@ export default function Header() {
                   router.push("/founder")
                   setIsMobileMenuOpen(false)
                 }}
-                className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
+                className={`text-left transition-colors font-medium cursor-pointer ${
+                  pathname === "/founder" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                }`}
               >
                 Founder's Page
               </button>
               <button
-                onClick={() => scrollToSection("services")}
-                className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
+                onClick={() => {
+                  router.push("/volunteer")
+                  setIsMobileMenuOpen(false)
+                }}
+                className={`text-left transition-colors font-medium cursor-pointer ${
+                  pathname === "/volunteer" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                }`}
               >
                 Become a GauSevak
               </button>
               <button
-                onClick={() => scrollToSection("testimonials")}
-                className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
+                 onClick={() => {
+                  router.push("/adopt-a-cow")
+                  setIsMobileMenuOpen(false)
+                }}
+                className={`text-left transition-colors font-medium cursor-pointer ${
+                  pathname === "/adopt-a-cow" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                }`}
               >
                 Adopt-a-cow
               </button>
@@ -213,7 +274,7 @@ export default function Header() {
                 {isAuthenticated && user ? (
                   /* Mobile Authenticated User */
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    {/* <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
                       <Avatar className="w-10 h-10">
                         <AvatarImage src={user.photo || "/placeholder.svg"} alt={user.name} />
                         <AvatarFallback className="bg-orange-100 text-orange-600">
@@ -222,9 +283,34 @@ export default function Header() {
                       </Avatar>
                       <div>
                         <p className="font-medium text-gray-900">{user.name}</p>
-                        <p className="text-sm text-gray-500">Member #{user.membershipNumber}</p>
+                        <p className="text-sm text-gray-500">Member #{user.mobile}</p>
                       </div>
-                    </div>
+                    </div> */}
+                    <Dialog open={isPreviewOpen} onOpenChange={setIsPreviewOpen}>
+                      <DialogTrigger asChild>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="w-full flex items-center gap-2 justify-center bg-transparent"
+                        >
+                          <Eye className="h-4 w-4" />
+                          Preview Card
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-lg">
+                        <CardGenerator
+                          user={{
+                            id: user?.id,
+                            name: user?.name || "",
+                            state: user?.state || "",
+                            mobile: user?.mobile || "",
+                            photo: user?.photo,
+                            membershipNumber: user?.membershipNumber,
+                            createdAt: user?.createdAt,
+                          }}
+                        />
+                      </DialogContent>
+                    </Dialog>
                     <Button
                       variant="outline"
                       size="sm"
