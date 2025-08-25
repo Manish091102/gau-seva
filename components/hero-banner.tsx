@@ -88,6 +88,22 @@ export default function HeroBanner() {
               {/* VOLUNTEER */}
               Become a Gau sevak
             </Button>
+
+            <Button
+              size="lg"
+              className="bg-[#e28154] hover:bg-[#e28154] text-white px-10 py-4 text-lg font-bold rounded-full min-w-[160px] shadow-xl transform hover:scale-105 transition-all"
+              onClick={() => {
+              //   if (!isAuthenticated) {
+              //     setIsAuthOpen(true)
+              //   } else {
+              //     setIsAuthOpen(true)
+
+                  router.push("/volunteer")
+                // }
+              }}
+            >
+              Vounteer
+            </Button>
           </div>
 
           {!isAuthenticated && (
