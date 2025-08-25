@@ -22,7 +22,15 @@ export async function GET(request: NextRequest) {
 
     // Verify JWT token
     const payload = await verifyToken(request)
-    const userId = payload.userId as string
+    const rawUserId = (payload as any).userId
+
+    // Normalize and validate userId
+    const userId = typeof rawUserId === "string" ? rawUserId : String(rawUserId)
+    const isValidObjectId = /^[a-fA-F0-9]{24}$/.test(userId)
+
+    if (!isValidObjectId) {
+      return NextResponse.json({ error: "Invalid user id in token" }, { status: 401 })
+    }
 
     if (!userId) {
       return NextResponse.json({ error: "Invalid token" }, { status: 401 })
@@ -61,7 +69,12 @@ export async function PUT(request: NextRequest) {
 
     // Verify JWT token
     const payload = await verifyToken(request)
-    const userId = payload.userId as string
+    const rawUserId = (payload as any).userId
+    const userId = typeof rawUserId === "string" ? rawUserId : String(rawUserId)
+    const isValidObjectId = /^[a-fA-F0-9]{24}$/.test(userId)
+    if (!isValidObjectId) {
+      return NextResponse.json({ error: "Invalid user id in token" }, { status: 401 })
+    }
 
     if (!userId) {
       return NextResponse.json({ error: "Invalid token" }, { status: 401 })

@@ -52,8 +52,8 @@ export async function POST(request: NextRequest) {
 
     await newUser.save()
 
-    // Generate JWT token
-    const token = await new SignJWT({ userId: newUser._id, mobile: newUser.mobile })
+    // Generate JWT token (ensure userId is a string)
+    const token = await new SignJWT({ userId: String(newUser._id), mobile: newUser.mobile })
       .setProtectedHeader({ alg: "HS256" })
       .setIssuedAt()
       .setExpirationTime("7d")
@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
 
     // Return user data without sensitive information
     const userResponse = {
-      id: newUser._id,
+      id: String(newUser._id),
       name: newUser.name,
       state: newUser.state,
       mobile: newUser.mobile,

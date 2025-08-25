@@ -27,6 +27,12 @@ export default function Header() {
     setIsMobileMenuOpen(false)
   }
 
+  useEffect(() => {
+    if (pathname === "/" && !isAuthenticated) {
+      setIsAuthOpen(true)
+    }
+  }, [pathname, isAuthenticated])
+
   const handleLogout = () => {
     logout()
     setIsMobileMenuOpen(false)

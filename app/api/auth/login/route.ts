@@ -63,8 +63,8 @@ export async function POST(request: NextRequest) {
       await OTP.deleteOne({ mobile })
     }
 
-    // Generate JWT token
-    const token = await new SignJWT({ userId: user._id, mobile: user.mobile })
+    // Generate JWT token (ensure userId is a string)
+    const token = await new SignJWT({ userId: String(user._id), mobile: user.mobile })
       .setProtectedHeader({ alg: "HS256" })
       .setIssuedAt()
       .setExpirationTime("7d")
@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
 
     // Return user data without sensitive information
     const userResponse = {
-      id: user._id,
+      id: String(user._id),
       name: user.name,
       state: user.state,
       district: user.district,
