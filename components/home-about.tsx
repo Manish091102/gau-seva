@@ -2,10 +2,21 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Users, Shield, CheckCircle, Star, BookOpen } from "lucide-react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import gauseva from "./assets/AboutGauSeva.png"
 import gaushala from "./assets/AboutGaushala.png"
 
 export default function HomAbout() {
+  const router = useRouter()
+
+  const handleGauShalaClick = () => {
+    router.push("/gaushala")
+  }
+
+  const handleGauSevaClick = () => {
+    router.push("/gauseva")
+  }
+
   return (
     <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
@@ -27,7 +38,8 @@ export default function HomAbout() {
               </p>
               <Button
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#e28154] bg-transparent px-6 py-2"
+                className="border-white text-white hover:bg-white hover:text-[#e28154] bg-transparent px-6 py-2 cursor-pointer"
+                onClick={handleGauShalaClick}
               >
                 Know More
               </Button>
@@ -48,7 +60,8 @@ export default function HomAbout() {
               </p>
               <Button
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#e28154] bg-transparent px-6 py-2"
+                className="border-white text-white hover:bg-white hover:text-[#e28154] bg-transparent px-6 py-2 cursor-pointer"
+                onClick={handleGauSevaClick}
               >
                 Know More
               </Button>

@@ -20,7 +20,7 @@ export default function HomePage() {
       <HeroBanner />
       <main>
         <QuickLinksSection />
-        <HighlightsSection />
+        {/* <HighlightsSection /> */}
         <HomAbout />
         <AboutEventSection />
         <VolunteerSection />
