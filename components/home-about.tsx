@@ -90,33 +90,32 @@ export default function HomAbout() {
 
 
         {/* About Founder Section */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <div className="bg-[#e28154] text-white p-6 rounded-lg">
-              <h2 className="text-3xl font-bold mb-6">About गौसेवा</h2>
-              <p className="mb-6 leading-relaxed">
-                Gau Seva is not just a way of honouring Gau Mata as a nurturer who has been part of our lives and
-                culture for generations. We rescue and care for cows, providing them with medical treatment, nutritious
-                food, and safe shelter. We use technology to manage our shelters better. Through this mission, we aim to
-                create a sustainable model that connects with our cultural purpose.
-              </p>
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#e28154] bg-transparent px-6 py-2 cursor-pointer"
-                onClick={handleGauSevaClick}
-              >
-                Know More
-              </Button>
-            </div>
+        <div className="grid md:grid-cols-2 gap-12 items-stretch mb-16">
+          <div className="bg-[#e28154] text-white p-6 rounded-lg flex flex-col">
+            <h2 className="text-3xl font-bold my-4">Message from the Founder</h2>
+            <p className="my-4 leading-relaxed">
+              "Serving Gau Mata is serving Bharat Mata. In her well-being lies our dharma, our culture, and our future. Join us in this path of seva, where every cow lives with dignity and love."
+            </p>
+            <p className="my-4">— Viram Desai Founder,<br />Gau Seva</p>
+            <div className="mt-auto">
+        <Button
+          variant="outline"
+          className="border-white text-white hover:bg-white hover:text-[#e28154] bg-transparent px-6 py-2 cursor-pointer"
+          onClick={handleGauSevaClick}
+        >
+          Learn More
+        </Button>
+      </div>
           </div>
-          <div>
           <Image
             src={gauseva}
-              alt="Founder with cows"
-              className="rounded-lg shadow-lg w-full h-80 object-cover object-top"
-            />
-          </div>
+            alt="Founder with cows"
+            className="rounded-lg shadow-lg w-full h-full object-cover object-top"
+          />
         </div>
+
+
+
         </div>
     </section>
 

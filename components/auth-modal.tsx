@@ -263,8 +263,8 @@ export default function AuthModal({ onClose, defaultMode = "login" }: AuthModalP
               onClick={() => handleToggleMode(true)}
               className={`flex-1 ${
                 isLogin
-                  ? "bg-orange-600 text-white shadow-sm"
-                  : "bg-white text-orange-600"
+                  ? "bg-[#e28154] text-white shadow-sm"
+                  : "bg-white text-[#e28154]"
               }`}
               disabled={isLoading}
             >
@@ -274,8 +274,8 @@ export default function AuthModal({ onClose, defaultMode = "login" }: AuthModalP
               onClick={() => handleToggleMode(false)}
               className={`flex-1 ${
                 !isLogin
-                  ? "bg-orange-600 text-white shadow-sm"
-                  : "bg-white text-orange-600"
+                  ? "bg-[#e28154] text-white shadow-sm"
+                  : "bg-white text-[#e28154]"
               }`}
               disabled={isLoading}
             >
@@ -307,7 +307,7 @@ export default function AuthModal({ onClose, defaultMode = "login" }: AuthModalP
             </div>
 
             {!otpSent ? (
-              <Button className="w-full bg-orange-600 hover:bg-orange-700" onClick={handleSendOtp} disabled={isLoading}>
+              <Button className="w-full bg-[#e28154] hover:bg-[#e28154]" onClick={handleSendOtp} disabled={isLoading}>
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -324,7 +324,7 @@ export default function AuthModal({ onClose, defaultMode = "login" }: AuthModalP
               <div className="space-y-4">
                 {/* OTP auto-filled; hide input and directly allow verification */}
                 <Button
-                  className="w-full bg-orange-600 hover:bg-orange-700"
+                  className="w-full bg-[#e28154] hover:bg-[#e28154]"
                   onClick={handleVerifyOtp}
                   disabled={isLoading}
                 >
@@ -435,7 +435,7 @@ export default function AuthModal({ onClose, defaultMode = "login" }: AuthModalP
                   <div className="mt-2">
                     <label htmlFor="photo" className="cursor-pointer">
                       <div
-                        className={`border-2 border-dashed rounded-lg p-4 text-center hover:border-orange-400 transition-colors ${
+                        className={`border-2 border-dashed rounded-lg p-4 text-center hover:border-[#e28154] transition-colors ${
                           errors.photo ? "border-red-500" : "border-gray-300"
                         }`}
                       >
@@ -463,7 +463,7 @@ export default function AuthModal({ onClose, defaultMode = "login" }: AuthModalP
                 </div>
 
                 <Button
-                  className="w-full bg-orange-600 hover:bg-orange-700"
+                  className="w-full bg-[#e28154] hover:bg-[#e28154]"
                   onClick={handleSendOtp}
                   disabled={isLoading}
                 >
@@ -488,7 +488,7 @@ export default function AuthModal({ onClose, defaultMode = "login" }: AuthModalP
                 </div>
                 {/* OTP auto-filled; hide input and directly allow verification */}
                 <Button
-                  className="w-full bg-orange-600 hover:bg-orange-700"
+                  className="w-full bg-[#e28154] hover:bg-[#e28154]"
                   onClick={handleVerifyOtp}
                   disabled={isLoading}
                 >
