@@ -8,6 +8,7 @@ import AboutEventSection from "@/components/about-event-section"
 import VolunteerSection from "@/components/volunteer-section"
 import Footer from "@/components/footer"
 import { useAuth } from "@/contexts/auth-context"
+import HomAbout from "@/components/home-about"
 
 export default function HomePage() {
   const { isAuthenticated } = useAuth()
@@ -20,6 +21,7 @@ export default function HomePage() {
       <main>
         <QuickLinksSection />
         <HighlightsSection />
+        <HomAbout />
         <AboutEventSection />
         <VolunteerSection />
       </main>

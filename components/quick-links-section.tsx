@@ -35,7 +35,7 @@ export default function QuickLinksSection() {
   ]
 
   return (
-    <section className="py-16 bg-orange-400">
+    <section className="py-16 bg-[#e28154]">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-amber-50 mb-12">Quick Links</h2>
 
