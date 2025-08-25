@@ -7,9 +7,6 @@ import { useAuth } from "@/contexts/auth-context"
 import CardGenerator from "@/components/card-generator"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-import Image from "next/image"
-import logo from "./assets/image.png"
-import bannerImage from "./assets/bannerimage.png"
 import Hero1 from "./assets/Hero.png"
 
 export default function HeroBanner() {
