@@ -19,7 +19,7 @@ export default function HomePage() {
       <Header />
       <HeroBanner />
       <main>
-        <QuickLinksSection />
+        {/* <QuickLinksSection /> */}
         {/* <HighlightsSection /> */}
         <HomAbout />
         <AboutEventSection />

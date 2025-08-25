@@ -9,7 +9,7 @@ import AuthModal from "@/components/auth-modal"
 import CardGenerator from "@/components/card-generator"
 import { useAuth } from "@/contexts/auth-context"
 import Image from "next/image"
-import logo from "./assets/image.png"
+import logo from "./assets/logotran.png"
 
 export default function Header() {
   const { user, logout, isAuthenticated } = useAuth()
@@ -50,7 +50,7 @@ export default function Header() {
                   <Image src={logo} alt="GauSeva" width={60} height={60} className="object-contain" />
                 {/* </div> */}
                 {/* <div>
-                  <h1 className="text-xl font-bold text-orange-600">गौ सेवा</h1>
+                  <h1 className="text-xl font-bold text-[#e28154]">गौ सेवा</h1>
                   <p className="text-xs text-gray-600 -mt-1">Gau Seva</p>
                 </div> */}
               {/* </div> */}
@@ -62,7 +62,7 @@ export default function Header() {
             {/* <button
               onClick={() => router.push("/")}
               className={`transition-colors font-medium cursor-pointer ${
-                pathname === "/" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                pathname === "/" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
               }`}
             >
               Home
@@ -70,7 +70,7 @@ export default function Header() {
             <button
               onClick={() => router.push("/gauseva")}
               className={`transition-colors font-medium cursor-pointer ${
-                pathname === "/gauseva" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                pathname === "/gauseva" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
               }`}
             >
               GauSeva
@@ -81,7 +81,7 @@ export default function Header() {
                 setIsMobileMenuOpen(false)
               }}
               className={`transition-colors font-medium cursor-pointer ${
-                pathname === "/gaushala" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                pathname === "/gaushala" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
               }`}
             >
               GauShala
@@ -92,7 +92,7 @@ export default function Header() {
                 setIsMobileMenuOpen(false)
               }}
               className={`transition-colors font-medium cursor-pointer ${
-                pathname === "/founder" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                pathname === "/founder" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
               }`}
             >
               Founder's Page
@@ -103,7 +103,7 @@ export default function Header() {
                 setIsMobileMenuOpen(false)
               }}
               className={`transition-colors font-medium cursor-pointer ${
-                pathname === "/volunteer" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                pathname === "/volunteer" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
               }`}
             >
               Become a GauSevak
@@ -114,7 +114,7 @@ export default function Header() {
               setIsMobileMenuOpen(false)
             }}
               className={`transition-colors font-medium cursor-pointer ${
-                pathname === "/adopt-a-cow" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                pathname === "/adopt-a-cow" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
               }`}
             >
               Adopt-a-cow
@@ -129,7 +129,7 @@ export default function Header() {
                 {/* <div className="flex items-center gap-2">
                   <Avatar className="w-8 h-8">
                     <AvatarImage src={user.photo || "/placeholder.svg"} alt={user.name} />
-                    <AvatarFallback className="bg-orange-100 text-orange-600 text-sm">
+                    <AvatarFallback className="bg-orange-100 text-[#e28154] text-sm">
                       {user.name.charAt(0).toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
@@ -187,7 +187,7 @@ export default function Header() {
                   </Button>
                 </DialogTrigger>
                 <DialogTrigger asChild>
-                  <Button size="sm" className="flex items-center gap-2 bg-orange-600 hover:bg-orange-700">
+                  <Button size="sm" className="flex items-center gap-2 bg-[#e28154] hover:bg-[#e28154]">
                     <User className="h-4 w-4" />
                     Sign Up
                   </Button>
@@ -216,7 +216,7 @@ export default function Header() {
                   router.push("/")
                   setIsMobileMenuOpen(false)
                 }}
-                className="text-left text-gray-700 hover:text-orange-600 transition-colors font-medium"
+                className="text-left text-gray-700 hover:text-[#e28154] transition-colors font-medium"
               >
                 Home
               </button> */}
@@ -226,7 +226,7 @@ export default function Header() {
                   setIsMobileMenuOpen(false)
                 }}
                 className={`text-left transition-colors font-medium cursor-pointer ${
-                  pathname === "/gauseva" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                  pathname === "/gauseva" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
                 }`}
               >
                 GauSeva
@@ -237,7 +237,7 @@ export default function Header() {
                 setIsMobileMenuOpen(false)
               }}
                 className={`text-left transition-colors font-medium cursor-pointer ${
-                  pathname === "/gaushala" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                  pathname === "/gaushala" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
                 }`}
               >
                 GauShala
@@ -248,7 +248,7 @@ export default function Header() {
                   setIsMobileMenuOpen(false)
                 }}
                 className={`text-left transition-colors font-medium cursor-pointer ${
-                  pathname === "/founder" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                  pathname === "/founder" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
                 }`}
               >
                 Founder's Page
@@ -259,7 +259,7 @@ export default function Header() {
                   setIsMobileMenuOpen(false)
                 }}
                 className={`text-left transition-colors font-medium cursor-pointer ${
-                  pathname === "/volunteer" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                  pathname === "/volunteer" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
                 }`}
               >
                 Become a GauSevak
@@ -270,7 +270,7 @@ export default function Header() {
                   setIsMobileMenuOpen(false)
                 }}
                 className={`text-left transition-colors font-medium cursor-pointer ${
-                  pathname === "/adopt-a-cow" ? "text-orange-600" : "text-gray-700 hover:text-orange-600"
+                  pathname === "/adopt-a-cow" ? "text-[#e28154]" : "text-gray-700 hover:text-[#e28154]"
                 }`}
               >
                 Adopt-a-cow
@@ -283,7 +283,7 @@ export default function Header() {
                     {/* <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
                       <Avatar className="w-10 h-10">
                         <AvatarImage src={user.photo || "/placeholder.svg"} alt={user.name} />
-                        <AvatarFallback className="bg-orange-100 text-orange-600">
+                        <AvatarFallback className="bg-orange-100 text-[#e28154]">
                           {user.name.charAt(0).toUpperCase()}
                         </AvatarFallback>
                       </Avatar>
@@ -343,7 +343,7 @@ export default function Header() {
                     <DialogTrigger asChild>
                       <Button
                         size="sm"
-                        className="flex items-center gap-2 justify-center bg-orange-600 hover:bg-orange-700"
+                        className="flex items-center gap-2 justify-center bg-[#e28154] hover:bg-[#e28154]"
                       >
                         <User className="h-4 w-4" />
                         Sign Up

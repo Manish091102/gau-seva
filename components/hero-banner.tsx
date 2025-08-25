@@ -51,11 +51,10 @@ export default function HeroBanner() {
         <div className="text-center text-white z-10 max-w-4xl mx-auto px-4">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 text-white drop-shadow-2xl">Gauseva</h1>
           <p className="text-2xl md:text-3xl mb-8 font-medium text-white drop-shadow-lg">
-            Protecting Our Sacred Mother
+          A Sacred Duty, A Community Responsibility
           </p>
           <p className="text-lg md:text-xl mb-8 font-medium text-white drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
-            On 26th August at 2 PM, at Town Hall, Gandhinagar, the VLEE Charitable Trust welcomes you to
-            be part of the Gau Seva Abhiyan.
+          Through our comprehensive Gau Seva program, we provide shelter, medical care, and compassionate care for abandoned and injured cows, while preserving our cultural heritage and promoting sustainable living practices.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">

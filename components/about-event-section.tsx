@@ -1,6 +1,6 @@
 export default function AboutEventSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-[#f8f0de] via-[#f8f0de] to-[#f8f0de] relative overflow-hidden">
+    <section className="pb-20 bg-gradient-to-br from-[#f8f0de] via-[#f8f0de] to-[#f8f0de] relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
