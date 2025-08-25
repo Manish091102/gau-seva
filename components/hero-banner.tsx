@@ -10,6 +10,7 @@ import { useState } from "react"
 import Image from "next/image"
 import logo from "./assets/image.png"
 import bannerImage from "./assets/bannerimage.png"
+import Hero1 from "./assets/Hero.png"
 
 export default function HeroBanner() {
   const { isAuthenticated, user } = useAuth()
@@ -45,7 +46,7 @@ export default function HeroBanner() {
       id="home"
       className="relative h-screen bg-cover bg-center bg-no-repeat flex flex-col"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${bannerImage.src})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${Hero1.src})`,
       }}
     >
       {/* Main Hero Content */}
@@ -139,8 +140,7 @@ export default function HeroBanner() {
         </div>
       </div>
 
-      <div className="relative">
-        {/* Curved bottom design */}
+      {/* <div className="relative">
         <div
           className="absolute inset-x-0 bottom-0 h-20 bg-white"
           style={{
@@ -148,7 +148,7 @@ export default function HeroBanner() {
             transform: "translateY(50%)",
           }}
         ></div>
-      </div>
+      </div> */}
     </section>
   )
 }

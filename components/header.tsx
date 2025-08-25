@@ -193,7 +193,7 @@ export default function Header() {
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-md">
-                  <AuthModal onClose={() => setIsAuthOpen(false)} />
+                  <AuthModal onClose={() => setIsAuthOpen(false)} defaultMode={pathname === "/" ? "signup" : "login"} />
                 </DialogContent>
               </Dialog>
             )}
@@ -350,7 +350,7 @@ export default function Header() {
                       </Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-md">
-                      <AuthModal onClose={() => setIsAuthOpen(false)} />
+                      <AuthModal onClose={() => setIsAuthOpen(false)} defaultMode={pathname === "/" ? "signup" : "login"} />
                     </DialogContent>
                   </Dialog>
                 )}

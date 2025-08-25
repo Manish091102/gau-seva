@@ -14,6 +14,7 @@ import CardGenerator from "@/components/card-generator"
 
 interface AuthModalProps {
   onClose: () => void
+  defaultMode?: "login" | "signup"
 }
 
 interface FormErrors {
@@ -25,9 +26,9 @@ interface FormErrors {
   otp?: string
 }
 
-export default function AuthModal({ onClose }: AuthModalProps) {
+export default function AuthModal({ onClose, defaultMode = "login" }: AuthModalProps) {
   const { sendOtp, verifyOtp, login, signup, isLoading, error, clearError } = useAuth()
-  const [isLogin, setIsLogin] = useState(true)
+  const [isLogin, setIsLogin] = useState(defaultMode !== "signup")
   const [formData, setFormData] = useState({
     name: "",
     state: "",
@@ -46,6 +47,11 @@ export default function AuthModal({ onClose }: AuthModalProps) {
   useEffect(() => {
     clearError()
   }, [isLogin, clearError])
+
+  // Sync mode with defaultMode prop when it changes
+  useEffect(() => {
+    setIsLogin(defaultMode !== "signup")
+  }, [defaultMode])
 
   // Clear success message after 3 seconds
   useEffect(() => {
