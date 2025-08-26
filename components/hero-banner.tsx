@@ -98,11 +98,11 @@ export default function HeroBanner() {
               //   } else {
               //     setIsAuthOpen(true)
 
-                  router.push("/volunteer")
+              router.push("/adopt-a-cow")
                 // }
               }}
             >
-              Volunteer
+              Adopt a Cow
             </Button>
           </div>
 
