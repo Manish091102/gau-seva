@@ -24,7 +24,7 @@ export default function HomAbout() {
          {/* Logo Section */}
          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
   {/* Left: Content */}
-  <div>
+  <div className="order-2 md:order-1">
     <div className="bg-[#e28154] text-white p-6 rounded-lg h-100 flex flex-col">
       <h2 className="text-3xl font-bold mb-6">About गौसेवा</h2>
       <p className="mb-6 leading-relaxed">
@@ -45,7 +45,7 @@ export default function HomAbout() {
   </div>
 
   {/* Right: Image */}
-  <div>
+  <div className="order-1 md:order-2">
     <Image
       src={logo}
       alt="Gau Seva Logo"
@@ -91,7 +91,7 @@ export default function HomAbout() {
 
         {/* About Founder Section */}
         <div className="grid md:grid-cols-2 gap-12 items-stretch mb-16">
-          <div className="bg-[#e28154] text-white p-6 rounded-lg flex flex-col">
+          <div className="order-2 md:order-1 bg-[#e28154] text-white p-6 rounded-lg flex flex-col">
             <h2 className="text-3xl font-bold my-4">Message from the Founder</h2>
             <p className="my-4 leading-relaxed">
               "Serving Gau Mata is serving Bharat Mata. In her well-being lies our dharma, our culture, and our future. Join us in this path of seva, where every cow lives with dignity and love."
@@ -110,7 +110,7 @@ export default function HomAbout() {
           <Image
             src={gauseva}
             alt="Founder with cows"
-            className="rounded-lg shadow-lg w-full h-full object-cover object-top"
+            className="order-1 md:order-2 rounded-lg shadow-lg w-full h-full object-cover object-top"
           />
         </div>
 
