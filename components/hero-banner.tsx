@@ -50,7 +50,7 @@ export default function HeroBanner() {
       <div className="flex-1 flex items-center justify-center">
         <div className="text-center text-white z-10 max-w-4xl mx-auto px-4">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 text-white drop-shadow-2xl">Gauseva</h1>
-          <p className="text-2xl md:text-3xl mb-8 font-medium text-white drop-shadow-lg">
+          <p className="text-xl md:text-3xl mb-8 font-medium text-white drop-shadow-lg">
           A Sacred Duty, A Community Responsibility
           </p>
           <p className="text-lg md:text-xl mb-8 font-medium text-white drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
@@ -74,7 +74,7 @@ export default function HeroBanner() {
             </Button> */}
             <Button
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 text-lg font-bold rounded-full min-w-[160px] shadow-xl transform hover:scale-105 transition-all"
+              className="bg-[#e28154] hover:bg-[#e28154]bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 text-lg font-bold rounded-full min-w-[160px] shadow-xl transform hover:scale-105 transition-all"
               onClick={() => {
                 if (!isAuthenticated) {
                   setIsAuthOpen(true)

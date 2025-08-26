@@ -25,7 +25,7 @@ export default function HomAbout() {
          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
   {/* Left: Content */}
   <div>
-    <div className="bg-[#e28154] text-white p-6 rounded-lg h-80 flex flex-col">
+    <div className="bg-[#e28154] text-white p-6 rounded-lg h-100 flex flex-col">
       <h2 className="text-3xl font-bold mb-6">About गौसेवा</h2>
       <p className="mb-6 leading-relaxed">
         Gau Seva by VLEE Charitable Trust is a movement to protect and nurture Gau Mata with dignity and love. Led
