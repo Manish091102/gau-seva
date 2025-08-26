@@ -19,7 +19,7 @@ export default function FounderPage() {
         style={{ backgroundImage: "url('/indian-man-with-cows-in-traditional-setting.png')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="relative z-10 flex items-center justify-end h-full">
           <div className="text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Meet the Founder – Viram Desai</h1>
           </div>
@@ -71,58 +71,58 @@ export default function FounderPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-12">
           <Card className="p-6 bg-[#e28154] border-none text-white text-center">
             {/* <Heart className="w-12 h-12 text-white mb-4 mx-auto" /> */}
-            <div className=" flex justify-center">
+            <div className=" flex justify-end">
                   <Image
                     src={Bio1}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={100}
+                    height={100}
                     className="rounded-lg object-cover "
                   />
                 </div>
-            <p className="text-sm font-medium">Improved rural infrastructure and public amenities</p>
+            <p className="text-lg font-medium">Improved rural infrastructure and public amenities</p>
           </Card>
 
           <Card className="p-6 bg-[#e28154] border-none text-white text-center">
-          <div className=" flex justify-center">
+          <div className=" flex justify-end">
                   <Image
                     src={Bio2}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={100}
+                    height={100}
                     className="rounded-lg object-cover "
                   />
                 </div>
-            <p className="text-sm font-medium">Led community development initiatives across villages and towns</p>
+            <p className="text-lg font-medium">Led community development initiatives across villages and towns</p>
           </Card>
 
           <Card className="p-6 bg-[#e28154] border-none text-white text-center">
-          <div className=" flex justify-center">
+          <div className=" flex justify-end">
                   <Image
                     src={Bio3}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={80}
+                    height={80}
                     className="rounded-lg object-cover "
                   />
                 </div>
-            <p className="text-sm font-medium">Championed education programs for underprivileged children</p>
+            <p className="text-lg font-medium">Championed education programs for underprivileged children</p>
           </Card>
 
           <Card className="p-6 bg-[#e28154] border-none text-white text-center">
-          <div className=" flex justify-center">
+          <div className=" flex justify-end">
                   <Image
                     src={Bio4}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={100}
+                    height={100}
                     className="rounded-lg object-cover "
                   />
                 </div>
-            <p className="text-sm font-medium">Coordinated disaster relief efforts during times of need</p>
+            <p className="text-lg font-medium">Coordinated disaster relief efforts during times of need</p>
           </Card>
         </div>
         </div>

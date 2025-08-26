@@ -58,12 +58,12 @@ export default function GauShalaPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <Card className="bg-[#e28154] text-white border-none">
               <CardContent className="p-6 text-center">
-                <div className="w-20 h-20 mx-auto mb-4 relative">
+                <div className="w-28 h-28 mx-auto mb-4 relative">
                   <Image
                     src={historyone}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={100}
+                    height={100}
                     className="rounded-lg object-cover"
                   />
                 </div>
@@ -76,12 +76,12 @@ export default function GauShalaPage() {
 
             <Card className="bg-[#e28154] text-white border-none">
               <CardContent className="p-6 text-center">
-              <div className="w-20 h-20 mx-auto mb-4 relative">
+              <div className="w-28 h-28 mx-auto mb-4 relative">
                   <Image
                     src={history2}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={100}
+                    height={100}
                     className="rounded-lg object-cover"
                   />
                 </div>
@@ -94,12 +94,12 @@ export default function GauShalaPage() {
 
             <Card className="bg-[#e28154] text-white border-none">
               <CardContent className="p-6 text-center">
-              <div className="w-20 h-20 mx-auto mb-4 relative">
+              <div className="w-28 h-28 mx-auto mb-4 relative">
                   <Image
                     src={history3}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={100}
+                    height={100}
                     className="rounded-lg object-cover"
                   />
                 </div>
@@ -110,12 +110,12 @@ export default function GauShalaPage() {
 
             <Card className="bg-[#e28154] text-white border-none">
               <CardContent className="p-6 text-center">
-              <div className="w-20 h-20 mx-auto mb-4 relative">
+              <div className="w-28 h-28 mx-auto mb-4 relative">
                   <Image
                     src={history4}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={100}
+                    height={100}
                     className="rounded-lg object-cover"
                   />
                 </div>
@@ -128,12 +128,12 @@ export default function GauShalaPage() {
 
             <Card className="bg-[#e28154] text-white border-none">
               <CardContent className="p-6 text-center">
-              <div className="w-20 h-20 mx-auto mb-4 relative">
+              <div className="w-28 h-28 mx-auto mb-4 relative">
                   <Image
                     src={history5}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={100}
+                    height={100}
                     className="rounded-lg object-cover"
                   />
                 </div>

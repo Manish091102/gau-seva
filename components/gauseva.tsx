@@ -10,13 +10,15 @@ export default function GauSevaPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-96 overflow-hidden">
+      {/* <section className="relative h-96 overflow-hidden"> */}
+      <section className="relative h-[15rem] md:h-[26rem] lg:h-[26rem] overflow-hidden">
+
         <div className="absolute inset-0">
           <Image
             // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-qmHuxcNKVRcGKt4SNgszPIiQMw8weD.jpeg"
             src={gausevaBanner}
             alt="Cows being fed"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
           {/* <div className="absolute inset-0 bg-black/40"></div> */}
         </div>

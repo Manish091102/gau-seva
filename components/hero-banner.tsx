@@ -102,7 +102,7 @@ export default function HeroBanner() {
                 // }
               }}
             >
-              Vounteer
+              Volunteer
             </Button>
           </div>
 
