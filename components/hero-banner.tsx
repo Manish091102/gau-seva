@@ -120,7 +120,7 @@ export default function HeroBanner() {
                 <DialogTrigger asChild>
                   <Button
                     size="lg"
-                    className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 text-lg font-bold rounded-full min-w-[180px] shadow-xl transform hover:scale-105 transition-all"
+                    className="bg-[#e28154] hover:bg-[#e28154] text-white px-10 py-4 text-lg font-bold rounded-full min-w-[180px] shadow-xl transform hover:scale-105 transition-all"
                   >
                     PREVIEW CARD
                   </Button>
