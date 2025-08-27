@@ -183,10 +183,10 @@ export default function FounderPage() {
       </section>
 
       {/* From Public Service to Gau Seva */}
-      <section className="py-16 px-4" style={{ backgroundColor: "#e28154" }}>
+      <section className="py-16 px-4" style={{ backgroundColor: "#f8f0de" }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">From Public Service to Gau Seva</h2>
-          <div className="text-white space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#e28154] mb-8 text-center">From Public Service to Gau Seva</h2>
+          <div className="text-[#e28154] space-y-6">
             <p className="text-lg leading-relaxed">
               For Viram Desai, Gau Seva is not just charity — it is Dharma, a sacred duty. The cow, revered in Hindu
               culture as Gau Mata, is more than a source of nourishment; she is a giver, a nurturer, and a symbol of
