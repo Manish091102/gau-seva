@@ -4,6 +4,9 @@ import wheredonationgo1 from "./assets/Wheredonationsgo1.png"
 import wheredonationgo2 from "./assets/Wheredonationsgo2.png"
 import wheredonationgo3 from "./assets/Wheredonationsgo3.png"
 import wheredonationgo4 from "./assets/Wheredonationsgo4.png"
+import donationfeature1 from "./assets/DonationFeatures1.png"
+import donationfeature2 from "./assets/DonationFeatures2.png"
+import donationfeature3 from "./assets/DonationFeatures3.png"
 
 export default function AdoptACowPage() {
     return (
@@ -36,7 +39,7 @@ export default function AdoptACowPage() {
         </section>
   
         {/* Where Your Donations Go Section */}
-        <section className="py-16 px-4 max-w-6xl mx-auto">
+        <section className="pb-16 px-4 max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-[#e28154] text-center mb-12">Where Your Donations Go</h2>
   
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -54,8 +57,8 @@ export default function AdoptACowPage() {
                 <Image
                     src={wheredonationgo1}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={120}
+                    height={120}
                     className="rounded-lg object-cover"
                   />
               </div>
@@ -79,8 +82,8 @@ export default function AdoptACowPage() {
                 <Image
                     src={wheredonationgo2}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={120}
+                    height={120}
                     className="rounded-lg object-cover"
                   />
               </div>
@@ -104,8 +107,8 @@ export default function AdoptACowPage() {
                 <Image
                     src={wheredonationgo3}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={120}
+                    height={120}
                     className="rounded-lg object-cover"
                   />
               </div>
@@ -129,8 +132,8 @@ export default function AdoptACowPage() {
                 <Image
                     src={wheredonationgo4}
                     alt="Spacious Cow Sheds"
-                    width={60}
-                    height={60}
+                    width={120}
+                    height={120}
                     className="rounded-lg object-cover"
                   />
               </div>
@@ -147,7 +150,7 @@ export default function AdoptACowPage() {
         </section>
   
         {/* Donation Features Section */}
-        <section className="py-16 px-4 max-w-6xl mx-auto">
+        <section className="pb-16 px-4 max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-[#e28154] text-center mb-8">Donation Features</h2>
           <p className="text-lg text-gray-700 text-center mb-12 max-w-3xl mx-auto">
             We've made the process simple, secure, and transparent so you can give with complete confidence.
@@ -156,10 +159,17 @@ export default function AdoptACowPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Multiple Payment Options */}
             <div className="bg-[#e28154] text-white p-8 rounded-lg text-center">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+              <div className="w-28 h-28 mx-auto mb-4 flex items-center justify-center">
+                {/* <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                </svg>
+                </svg> */}
+                <Image
+                    src={donationfeature1}
+                    alt="Spacious Cow Sheds"
+                    width={120}
+                    height={120}
+                    className="rounded-lg object-cover"
+                  />
               </div>
               <h3 className="text-xl font-bold mb-3">Multiple Payment Options</h3>
               <p className="text-sm opacity-90">
@@ -169,15 +179,17 @@ export default function AdoptACowPage() {
   
             {/* Instant Digital Receipts */}
             <div className="bg-[#e28154] text-white p-8 rounded-lg text-center">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            <div className="w-28 h-28 mx-auto mb-4 flex items-center justify-center">
+                {/* <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                </svg> */}
+                <Image
+                    src={donationfeature2}
+                    alt="Spacious Cow Sheds"
+                    width={120}
+                    height={120}
+                    className="rounded-lg object-cover"
                   />
-                </svg>
               </div>
               <h3 className="text-xl font-bold mb-3">Instant Digital Receipts</h3>
               <p className="text-sm opacity-90">
@@ -187,15 +199,17 @@ export default function AdoptACowPage() {
   
             {/* Donation Impact Tracker */}
             <div className="bg-[#e28154] text-white p-8 rounded-lg text-center">
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+            <div className="w-28 h-28 mx-auto mb-4 flex items-center justify-center">
+                {/* <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                </svg> */}
+                <Image
+                    src={donationfeature3}
+                    alt="Spacious Cow Sheds"
+                    width={120}
+                    height={120}
+                    className="rounded-lg object-cover"
                   />
-                </svg>
               </div>
               <h3 className="text-xl font-bold mb-3">Donation Impact Tracker</h3>
               <p className="text-sm opacity-90">
@@ -210,8 +224,8 @@ export default function AdoptACowPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Why Donate to Gau Seva?</h2>
   
-            <p className="text-xl mb-4">In the words of our founder, Viram Desai:</p>
-            <blockquote className="text-2xl md:text-3xl font-light italic mb-8">
+            <p className="text-xl mb-2">In the words of our founder, Viram Desai:</p>
+            <blockquote className="text-xl md:text-xl font-light italic mb-8">
               "When you feed a cow, you nourish the soul of the world."
             </blockquote>
   

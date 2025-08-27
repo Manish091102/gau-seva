@@ -38,14 +38,14 @@ export default function VolunteerPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="p-6 bg-[#e28154] border-none text-white text-center">
-              <FileText className="w-12 h-12 text-white mb-4 mx-auto" />
-              <h3 className="text-xl font-bold mb-3">Register Online</h3>
+              <FileText className="w-20 h-20 text-white mb-4 mx-auto" />
+              <h3 className="text-xl font-bold">Register Online</h3>
               <p className="text-sm">Fill out our secure digital form with your details, skills and availability</p>
             </Card>
 
             <Card className="p-6 bg-[#e28154] border-none text-white text-center">
-              <Users className="w-12 h-12 text-white mb-4 mx-auto" />
-              <h3 className="text-xl font-bold mb-3">Orientation Session</h3>
+              <Users className="w-20 h-20 text-white mb-4 mx-auto" />
+              <h3 className="text-xl font-bold">Orientation Session</h3>
               <p className="text-sm">
                 Attend an introduction session (online or in person) to learn about Gau Seva, shelter operations, and
                 your role in Gau Seva
@@ -53,8 +53,8 @@ export default function VolunteerPage() {
             </Card>
 
             <Card className="p-6 bg-[#e28154] border-none text-white text-center">
-              <CheckCircle className="w-12 h-12 text-white mb-4 mx-auto" />
-              <h3 className="text-xl font-bold mb-3">Approval and Confirmation</h3>
+              <CheckCircle className="w-20 h-20 text-white mb-4 mx-auto" />
+              <h3 className="text-xl font-bold">Approval and Confirmation</h3>
               <p className="text-sm">Once approved, you will receive your Digital Volunteer ID and welcome kit</p>
             </Card>
           </div>
@@ -68,17 +68,17 @@ export default function VolunteerPage() {
             Every registered volunteer receives a Digital Volunteer ID Card, which includes:
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div className="flex items-center space-x-3">
-              {/* <Camera className="w-6 h-6 text-orange-600" /> */}
+          <div className="space-y-3 max-w-2xl mx-auto mb-8">
+            <div className="flex items-center">
+              <span className="text-[#e28154] mr-2">*</span>
               <span className="text-gray-700">Your photograph and full name</span>
             </div>
-            <div className="flex items-center space-x-3">
-              {/* <Hash className="w-6 h-6 text-orange-600" /> */}
+            <div className="flex items-center">
+              <span className="text-[#e28154] mr-2">*</span>
               <span className="text-gray-700">A unique Gau Sevak ID number</span>
             </div>
-            <div className="flex items-center space-x-3">
-              {/* <QrCode className="w-6 h-6 text-orange-600" /> */}
+            <div className="flex items-center">
+              <span className="text-[#e28154] mr-2">*</span>
               <span className="text-gray-700">A QR code for instant verification at shelters and events</span>
             </div>
           </div>
