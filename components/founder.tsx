@@ -32,7 +32,7 @@ export default function FounderPage() {
             // src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image.png-qmHuxcNKVRcGKt4SNgszPIiQMw8weD.jpeg"
             src={hero}
             alt="Cows being fed"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
           {/* <div className="absolute inset-0 bg-black/40"></div> */}
         </div>
@@ -45,9 +45,9 @@ export default function FounderPage() {
 
       {/* Biography & Service Background */}
       <section className="py-16 px-4" style={{ backgroundColor: "#f8f0de" }}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto ">
           <h2 className="flex text-3xl md:text-4xl font-bold text-[#e28154] mb-8 justify-center">Biography & Service Background</h2>
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-28">
           <div>
             <p className="text-gray-700 mb-4 leading-relaxed">
               Viram Desai's life is a testament to the power of seva (selfless service) and his unwavering commitment to
@@ -72,21 +72,22 @@ export default function FounderPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-12">
-          <Card className="p-6 bg-[#e28154] border-none text-white text-center">
-            {/* <Heart className="w-12 h-12 text-white mb-4 mx-auto" /> */}
-            <div className=" flex justify-end">
-                  <Image
-                    src={Bio1}
-                    alt="Spacious Cow Sheds"
-                    width={100}
-                    height={100}
-                    className="rounded-lg object-cover "
-                  />
-                </div>
-            <p className="text-lg font-medium">Improved rural infrastructure and public amenities</p>
-          </Card>
+        <Card className="p-6 bg-[#e28154] border-none text-white">
+  <div className="flex justify-end">
+    <Image
+      src={Bio1}
+      alt="Spacious Cow Sheds"
+      width={100}
+      height={100}
+      className="rounded-lg object-cover"
+    />
+  </div>
+  <p className="text-md font-medium text-left">
+    Improved rural <br/> infrastructure <br/> and public <br/> amenities
+  </p>
+</Card>
 
-          <Card className="p-6 bg-[#e28154] border-none text-white text-center">
+          <Card className="p-6 bg-[#e28154] border-none text-white">
           <div className=" flex justify-end">
                   <Image
                     src={Bio2}
@@ -96,10 +97,10 @@ export default function FounderPage() {
                     className="rounded-lg object-cover "
                   />
                 </div>
-            <p className="text-lg font-medium">Led community development initiatives across villages and towns</p>
+            <p className="text-md font-medium text-left">Led community <br/> development <br/> initiatives across <br/> villages and towns</p>
           </Card>
 
-          <Card className="p-6 bg-[#e28154] border-none text-white text-center">
+          <Card className="p-6 bg-[#e28154] border-none text-white">
           <div className=" flex justify-end">
                   <Image
                     src={Bio3}
@@ -109,10 +110,10 @@ export default function FounderPage() {
                     className="rounded-lg object-cover "
                   />
                 </div>
-            <p className="text-lg font-medium">Championed education programs for underprivileged children</p>
+            <p className="text-md font-medium text-left">Championed <br/> education programs <br/> for underprivileged <br/> children</p>
           </Card>
 
-          <Card className="p-6 bg-[#e28154] border-none text-white text-center">
+          <Card className="p-6 bg-[#e28154] border-none text-white">
           <div className=" flex justify-end">
                   <Image
                     src={Bio4}
@@ -122,7 +123,7 @@ export default function FounderPage() {
                     className="rounded-lg object-cover "
                   />
                 </div>
-            <p className="text-lg font-medium">Coordinated disaster relief efforts during times of need</p>
+            <p className="text-md font-medium text-left">Coordinated <br/> disaster relief <br/> efforts during <br/> times of need</p>
           </Card>
         </div>
         </div>
@@ -186,7 +187,7 @@ export default function FounderPage() {
       <section className="py-16 px-4" style={{ backgroundColor: "#f8f0de" }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-[#e28154] mb-8 text-center">From Public Service to Gau Seva</h2>
-          <div className="text-[#e28154] space-y-6">
+          <div className="text-black space-y-6">
             <p className="text-lg leading-relaxed">
               For Viram Desai, Gau Seva is not just charity — it is Dharma, a sacred duty. The cow, revered in Hindu
               culture as Gau Mata, is more than a source of nourishment; she is a giver, a nurturer, and a symbol of

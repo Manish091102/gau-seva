@@ -11,7 +11,7 @@ export default function GauSevaPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       {/* <section className="relative h-96 overflow-hidden"> */}
-      <section className="relative h-[15rem] md:h-[26rem] lg:h-[26rem] overflow-hidden">
+      <section className="relative h-[15rem] md:h-[30rem] lg:h-[30rem] overflow-hidden">
 
         <div className="absolute inset-0">
           <Image

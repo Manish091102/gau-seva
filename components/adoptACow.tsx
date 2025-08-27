@@ -17,7 +17,7 @@ export default function AdoptACowPage() {
           <Image
             src={volunteerBanner}
             alt="Gau Shala - Sanctuary for cows"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
           {/* <div className="absolute inset-0 bg-black/40"></div> */}
         </div>

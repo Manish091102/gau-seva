@@ -13,7 +13,7 @@ export default function VolunteerPage() {
           <Image
             src={volunteerBanner}
             alt="Gau Shala - Sanctuary for cows"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
           {/* <div className="absolute inset-0 bg-black/40"></div> */}
         </div>
@@ -34,7 +34,7 @@ export default function VolunteerPage() {
 
         {/* Process Section */}
         <div className="mb-16">
-          <h2 className="text-5xl font-bold text-[#e28154] mb-8 text-center">Process</h2>
+          <h2 className="text-3xl font-bold text-[#e28154] mb-8 text-center">Process</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="p-6 bg-[#e28154] border-none text-white text-center">
@@ -62,7 +62,7 @@ export default function VolunteerPage() {
 
         {/* Digital ID Section */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-orange-600 mb-8 text-center">Digital ID and Badges</h2>
+          <h2 className="text-3xl font-bold text-[#e28154] mb-8 text-center">Digital ID and Badges</h2>
 
           <p className="text-gray-700 mb-6 text-center">
             Every registered volunteer receives a Digital Volunteer ID Card, which includes:
