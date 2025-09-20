@@ -6,7 +6,7 @@ import hero from "./assets/HeroWithBG.png"
 import virammbhai from "./assets/ViramBhaiImage.png"
 import Bio1 from "./assets/BiographyServiceBackground1.png"
 import Bio2 from "./assets/BiographyServiceBackground2.png"
-import Bio3 from "./assets/BiographyServiceBackground3.png"
+import Bio3 from "./assets/1000505160.png"
 import Bio4 from "./assets/BiographyServiceBackground4.png"
 import { Heart, Users, GraduationCap, Truck } from "lucide-react"
 
