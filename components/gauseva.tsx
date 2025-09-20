@@ -20,7 +20,7 @@ export default function GauSevaPage() {
             alt="Cows being fed"
             className="w-full h-full object-cover object-top"
           />
-          {/* <div className="absolute inset-0 bg-black/40"></div> */}
+          {/* <div className="absolute inset-0 bg-black/40"></div> */} 
         </div>
         <div className="relative z-10 flex items-end justify-center h-full text-center text-white">
           <div className="pb-4">
