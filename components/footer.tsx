@@ -17,7 +17,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
@@ -55,16 +55,74 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center">
+                <button 
+                  onClick={() => router.push("/founder")}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center"
+                >
                   <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
-                  Services
-                </a>
+                  Founder
+                </button>
               </li>
               <li>
-                <a href="#blogs" className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center">
+                <button 
+                  onClick={() => router.push("/adopt-a-cow")}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center"
+                >
                   <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
-                  Blogs
-                </a>
+                  Adopt a Cow
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => router.push("/contact-us")}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center"
+                >
+                  <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
+                  Contact Us
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Policies */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-orange-400">Policies</h4>
+            <ul className="space-y-3">
+              <li>
+                <button 
+                  onClick={() => router.push("/privacy-policy")}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center"
+                >
+                  <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
+                  Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => router.push("/terms-conditions")}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center"
+                >
+                  <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
+                  Terms & Conditions
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => router.push("/cancellation-policy")}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center"
+                >
+                  <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
+                  Cancellation Policy
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => router.push("/shipping-policy")}
+                  className="text-gray-300 hover:text-orange-400 transition-colors duration-300 flex items-center"
+                >
+                  <span className="w-2 h-2 bg-orange-400 rounded-full mr-3"></span>
+                  Shipping Policy
+                </button>
               </li>
             </ul>
           </div>
